@@ -10,7 +10,7 @@ import Main.GameObject;
  * @author 47465
  */
 public abstract class RenderSystem extends MySystem {
-
+	
 
 //-----------------------------------分割线------------------------------------
 //以下的代码没什么好改的。

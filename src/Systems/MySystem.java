@@ -2,6 +2,7 @@ package Systems;
 
 
 import Main.GameObject;
+import Main.GameWorld;
 
 /**
  * System的父类
@@ -13,6 +14,8 @@ public abstract class MySystem implements ISystem{
 	 * 关联的GameObject
 	 */
 	public GameObject gameObject = null;
+	
+	public static GameWorld gameWorld;
 
 	public MySystem() {
 		
