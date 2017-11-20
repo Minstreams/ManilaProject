@@ -39,4 +39,16 @@ public abstract class Scene {
         }
         return null;
     }
+
+    /**
+     * 根据物体序号找到物体
+     * @param index
+     * @return
+     */
+    protected GameObject Find(int index){
+        if(gameObjects.size()>index){
+            return gameObjects.get(index);
+        }
+        return  null;
+    }
 }
