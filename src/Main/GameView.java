@@ -2,14 +2,18 @@ package Main;
 
 import Components.RenderComponent;
 
-import java.awt.Label;
+import java.awt.*;
 
 import javax.swing.*;
 
 public class GameView extends JFrame {
 		JFrame jFrame = new JFrame("test");
 		JPanel jPanel = new JPanel();
-		
+
+	public GameView() throws HeadlessException {
+		CreatView();
+	}
+
 	public void CreatView() {
 		jFrame.setSize(1000, 400);
 		jPanel.setLayout(null);
@@ -24,9 +28,7 @@ public class GameView extends JFrame {
 		jFrame.setVisible(true);
 		jFrame.setContentPane(jPanel);
 	}
-	public void PaintGameObject(GameObject gameObject) {
-		RenderComponent rc =gameObject.GetComponent(RenderComponent.class);
+	public void PaintGameObject(RenderComponent rc) {
 		this.jPanel.add(rc.getjLabel());
-		jPanel.setBounds(gameObject.x,gameObject.y, rc.getImageIcon().getIconWidth(), rc.getImageIcon().getIconHeight());
 	}
 }

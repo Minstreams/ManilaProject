@@ -3,6 +3,7 @@ package Systems;
 import java.util.ArrayList;
 
 import Main.GameObject;
+import Main.GameView;
 
 /**
  * 渲染系统，所有渲染组件的父类
@@ -11,6 +12,7 @@ import Main.GameObject;
  */
 public abstract class RenderSystem extends MySystem {
 
+    public static GameView gameView = new GameView();
 
 
 
