@@ -8,6 +8,5 @@ import Systems.RenderSystem;
 public class Test {
     public static void main(String[] args) {
         GameWorld gameWorld = new GameWorld(new Scene01());
-        RenderSystem.Start();
     }
 }

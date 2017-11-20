@@ -13,7 +13,7 @@ public class GameWorld extends TimerTask{
 
 	public GameWorld(Scene scene){
 		LoadScene(scene);
-		//RenderSystem.Start();
+		RenderSystem.Start();
 		InputSystem.Start();
 		//开始游戏循环
 		this.timer.schedule(this,0,25);
