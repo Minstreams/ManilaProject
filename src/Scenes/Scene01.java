@@ -4,6 +4,9 @@ import Components.RenderComponent;
 import Main.GameObject;
 import Main.Scene;
 
+/**
+ * 示例场景
+ */
 public class Scene01 extends Scene {
     @Override
     protected void LoadScene() {

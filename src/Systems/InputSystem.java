@@ -3,7 +3,7 @@ package Systems;
 import java.util.ArrayList;
 
 /**
- * 输入时根据鼠标坐标执行指令的系统
+ * 输入系统，所有组件父类
  *
  * @author 47465
  */
