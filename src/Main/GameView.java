@@ -25,6 +25,8 @@ public class GameView extends JFrame {
 		jFrame.setContentPane(jPanel);
 	}
 	public void PaintGameObject(GameObject gameObject) {
-		this.jPanel.add(gameObject.GetComponent(RenderComponent.class).getjLabel());
+		RenderComponent rc =gameObject.GetComponent(RenderComponent.class);
+		this.jPanel.add(rc.getjLabel());
+		jPanel.setBounds(gameObject.x,gameObject.y, rc.getImageIcon().getIconWidth(), rc.getImageIcon().getIconHeight());
 	}
 }

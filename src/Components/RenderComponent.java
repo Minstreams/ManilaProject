@@ -30,14 +30,10 @@ public class RenderComponent extends RenderSystem {
 		jLabel = new JLabel();
 		jLabel.setOpaque(true);
 		jLabel.setIcon(imageIcon);
-		jLabel.setBounds(0/*gameObject.x*/,0/* gameObject.y*/, imageIcon.getIconWidth(), imageIcon.getIconHeight());
-		
 	}
 	@Override
 	protected void function() {
 		// TODO Auto-generated method stub
-		System.out.println("RenderComponent function");
-		
 	}
 
 	public static ImageIcon getImageFile(String name) {
