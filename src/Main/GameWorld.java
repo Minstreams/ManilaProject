@@ -9,6 +9,10 @@ public class GameWorld extends TimerTask{
 		
 	}
 
+	/**
+	 * 延迟阻塞s秒
+	 * @param s
+	 */
 	public static void delaySeconds(float s) {
 		long o = System.currentTimeMillis();
 		long delta = (long)s*1000;
