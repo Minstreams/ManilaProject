@@ -40,7 +40,7 @@ public class GameView extends JFrame {
 		*/
 		jFrame.setVisible(true);
 
-		jPanel.addMouseListener(new MouseContrllor());
+		//jPanel.addMouseListener(new MouseContrllor());
 	}
 	public void PaintGameObject(RenderComponent rc) {
 		this.jPanel.add(rc.getjLabel());
