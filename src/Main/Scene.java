@@ -3,6 +3,9 @@ package Main;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 任意一个场景继承这个
+ */
 public abstract class Scene {
     List<GameObject> gameObjects = new ArrayList<GameObject>();
 
@@ -16,7 +19,7 @@ public abstract class Scene {
     protected abstract void LoadScene();
 
     /**
-     * 添加游戏物体
+     * 向场景里添加游戏物体
      * @param gameObject
      * @return
      */
