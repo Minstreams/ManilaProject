@@ -5,6 +5,9 @@ import java.awt.event.*;
 public class Input implements KeyListener, MouseListener, MouseMotionListener {
 
     //-----------------处理键盘输入----------------
+    private static boolean[] keyCondition = new boolean[256];
+    private static boolean[] keyDownCondition = new boolean[256];
+    private static boolean[] keyUpCondition = new boolean[256];
 
     /**
      * 当某按键按下时返回true
@@ -12,18 +15,23 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
      * @param keyCode
      * @return
      */
-    public static boolean GetKey(KeyCode keyCode) {
-        //TODO
+    public static boolean GetKey(int keyCode) {
+        return keyCondition[keyCode];
+    }
+
+    public static boolean GetKeyDown(int keyCode) {
+        if (keyDownCondition[keyCode]) {
+            keyDownCondition[keyCode] = false;
+            return true;
+        }
         return false;
     }
 
-    public static boolean GetKeyDown(KeyCode keyCode) {
-        //TODO
-        return false;
-    }
-
-    public static boolean GetKeyUp(KeyCode keyCode) {
-        //TODO
+    public static boolean GetKeyUp(int keyCode) {
+        if (keyUpCondition[keyCode]) {
+            keyUpCondition[keyCode] = false;
+            return true;
+        }
         return false;
     }
 
@@ -34,12 +42,22 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-
+        if (e.getKeyCode() >= 256) {
+            return;
+        }
+        keyCondition[e.getKeyCode()] = true;
+        keyDownCondition[e.getKeyCode()] = true;
+        keyUpCondition[e.getKeyCode()] = false;
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-
+        if (e.getKeyCode() >= 256) {
+            return;
+        }
+        keyCondition[e.getKeyCode()] = false;
+        keyDownCondition[e.getKeyCode()] = false;
+        keyUpCondition[e.getKeyCode()] = true;
     }
 
     //-----------------处理鼠标输入----------------
