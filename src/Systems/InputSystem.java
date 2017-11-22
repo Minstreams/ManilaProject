@@ -8,11 +8,6 @@ import java.util.ArrayList;
  * @author 47465
  */
 public abstract class InputSystem extends MySystem {
-    /**
-     * 鼠标
-     */
-    public static int mouseX = 0;
-    public static int mouseY = 0;
 
 
 
