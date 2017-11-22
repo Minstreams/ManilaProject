@@ -3,7 +3,7 @@ package Systems;
 import java.util.ArrayList;
 
 /**
- * 输入系统，所有组件父类
+ * 输入系统，部分组件父类，继承该组件的组件须重写OnMouseDown方法
  *
  * @author 47465
  */
