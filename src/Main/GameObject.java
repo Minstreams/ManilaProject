@@ -13,6 +13,7 @@ public class GameObject {
 	public String name;
 	public int x;
 	public int y;
+	public int layer;
 	
 	public GameObject parent = null;
 	public ArrayList<GameObject> children = new ArrayList<GameObject>();
@@ -27,9 +28,10 @@ public class GameObject {
 		this.parent = parent;
 	}
 	
-	public GameObject(int x,int y){
+	public GameObject(int x,int y,int layer){
 		this.x = x;
 		this.y = y;
+		this.layer = layer;
 	}
 	
 	public GameObject(GameObject parent,int x,int y){
