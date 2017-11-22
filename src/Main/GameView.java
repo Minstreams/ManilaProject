@@ -31,16 +31,8 @@ public class GameView extends JFrame {
 		jFrame.add(jPanel);
 
 
-		/*
-		JLabel jLabel = new JLabel();
-		ImageIcon icon = RenderComponent.getImageFile("g2.jpg");
-		jLabel.setIcon(icon);
-		jLabel.setOpaque(false);
-		jPanel.add(jLabel);
-		*/
 		jFrame.setVisible(true);
 
-		//jPanel.addMouseListener(new MouseContrllor());
 	}
 	public void PaintGameObject(RenderComponent rc) {
 		this.jPanel.add(rc.getjLabel());
