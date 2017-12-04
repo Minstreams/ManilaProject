@@ -26,7 +26,7 @@ public class GameView extends JFrame {
 	}
 
 	public void CreatView() {
-		jFrame.setSize(1000, 400);
+		jFrame.setSize(800, 600);
 		jFrame.setContentPane(jLayeredPane);
 
 		/*
