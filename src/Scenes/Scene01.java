@@ -8,6 +8,7 @@ import Main.Scene;
  * 示例场景
  */
 public class Scene01 extends Scene {
+
     @Override
     protected void LoadScene() {
         AddGameObject(new GameObject(0,20,1));
