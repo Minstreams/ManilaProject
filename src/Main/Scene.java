@@ -69,4 +69,11 @@ public abstract class Scene {
     public List<GameObject> getGameObjects() {
         return gameObjects;
     }
+
+    public void OnDestroy(){
+        for(GameObject gameObject:gameObjects){
+            gameObject.OnDestroy();
+        }
+        gameObjects.clear();
+    }
 }

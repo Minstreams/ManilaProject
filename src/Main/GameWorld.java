@@ -34,6 +34,7 @@ public class GameWorld extends TimerTask{
 	 * @param toLoad
 	 */
 	public void LoadScene(Scene toLoad){
+		currentScene.OnDestroy();
 		currentScene = toLoad;
 	}
 

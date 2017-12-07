@@ -50,12 +50,11 @@ public abstract class MySystem implements ISystem{
 		}
 		gameObject.OnDestroy();
 		gameObject.scene.getGameObjects().remove(gameObject);
-
 	}
 
 	protected void Destroy(MySystem component){
-		component.gameObject.getComponents().remove(component);
 		component.OnDestroy();
+		component.gameObject.getComponents().remove(component);
 	}
 
 	public abstract void OnDestroy();
