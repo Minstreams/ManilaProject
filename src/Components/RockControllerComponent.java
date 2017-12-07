@@ -15,6 +15,9 @@ public class RockControllerComponent extends ComponentSystem {
     @Override
     protected void function() {
         gameObject.x-=speedX;
+        if(gameObject.x<-50){
+            Destroy(gameObject);
+        }
 
     }
 
