@@ -10,11 +10,6 @@ import java.util.ArrayList;
 public abstract class InputSystem extends MySystem {
 
 
-
-
-
-
-
 //-----------------------------------分割线------------------------------------
 //以下的代码没什么好改的。
     /**
@@ -27,8 +22,8 @@ public abstract class InputSystem extends MySystem {
      */
     public static void Function() {
         //遍历
-        for (InputSystem s : components) {
-            s.function();
+        for(int i = 0;i<components.size();i++){
+            components.get(i).function();
         }
     }
 
@@ -37,8 +32,8 @@ public abstract class InputSystem extends MySystem {
      */
     public static void Start() {
         //遍历
-        for (InputSystem s : components) {
-            s.start();
+        for(int i = 0;i<components.size();i++){
+            components.get(i).start();
         }
     }
 

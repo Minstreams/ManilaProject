@@ -14,6 +14,7 @@ public abstract class Scene {
     static GameObject currentGameObject = null;
 
     public Scene() {
+        System.out.println("Scene Loaded!");
     }
 
     /**
@@ -77,5 +78,6 @@ public abstract class Scene {
             gameObject.OnDestroy();
         }
         gameObjects.clear();
+        System.out.println("Scene Destroyed!");
     }
 }

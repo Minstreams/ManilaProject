@@ -9,7 +9,7 @@ import javax.swing.*;
 /**
  * 游戏界面类
  */
-public class GameView extends JFrame {
+public class GameView{
 		JFrame jFrame = new JFrame("test");
 		JLayeredPane jLayeredPane = new JLayeredPane();
 
@@ -42,9 +42,12 @@ public class GameView extends JFrame {
 	}
 	public void PaintGameObject(RenderComponent rc,int layer) {
 		jLayeredPane.add(rc.getjPanel(), new Integer(layer) );
+		//jFrame.setContentPane(jLayeredPane);
+		//jFrame.setVisible(true);
 	}
 
 	public void Destroy(RenderComponent rc) {
 		jLayeredPane.remove(rc.getjPanel() );
+		jFrame.setContentPane(jLayeredPane);
 	}
 }

@@ -3,6 +3,7 @@ package Systems;
 
 import Main.GameObject;
 import Main.GameWorld;
+import Main.Scene;
 
 /**
  * System的父类
@@ -55,6 +56,10 @@ public abstract class MySystem implements ISystem{
 	protected void Destroy(MySystem component){
 		component.OnDestroy();
 		component.gameObject.getComponents().remove(component);
+	}
+
+	protected void LoadScene(Scene toLoad){
+		gameWorld.LoadScene(toLoad);
 	}
 
 	public abstract void OnDestroy();
