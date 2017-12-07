@@ -22,7 +22,7 @@ public class GameView extends JFrame {
 		//注册鼠标移动事件
 		jLayeredPane.addMouseMotionListener(inputController);
 		//注册键盘事件
-		jLayeredPane.addKeyListener(inputController);
+		jFrame.addKeyListener(inputController);
 	}
 
 	public void CreatView() {
