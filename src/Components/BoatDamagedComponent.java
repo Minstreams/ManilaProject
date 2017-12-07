@@ -10,10 +10,15 @@ public class BoatDamagedComponent extends ComponentSystem {
     private GameObject rocks = null;
     private boolean isInvisible = false;
 
-    public BoatDamagedComponent(int maxHP, GameObject rocks) {
+    private GameObject HPBar;
+    private GameObject HeadImage;
+
+    public BoatDamagedComponent(int maxHP, GameObject rocks, GameObject HPBar, GameObject headImage) {
         this.maxHP = maxHP;
         this.HP = maxHP;
         this.rocks = rocks;
+        this.HPBar = HPBar;
+        HeadImage = headImage;
     }
 
     @Override
@@ -24,6 +29,7 @@ public class BoatDamagedComponent extends ComponentSystem {
     @Override
     protected void function() {
         ScanRocks();
+        InvisibleTime();
     }
 
     private void IncreaseHP(int value) {
@@ -39,17 +45,22 @@ public class BoatDamagedComponent extends ComponentSystem {
             this.HP = 0;
             Die();
         }
-        System.out.println("Current HP:" + this.HP);
+        ChangeHPBarPos();
     }
 
-    private void Die(){
+    /**
+     * 改变血条位置
+     */
+    private void ChangeHPBarPos() {
+        HPBar.x = 959 - (int) (HP * 1.0f / maxHP * 149);
+    }
+
+
+    private void Die() {
 
     }
 
     private void ScanRocks() {
-        if (isInvisible) {
-            return;
-        }
         for (GameObject r : rocks.children) {
             if (r == null) {
                 continue;
@@ -59,10 +70,38 @@ public class BoatDamagedComponent extends ComponentSystem {
             int deltaY = r.y - gameObject.y - 67;
             //如果撞到
             if (deltaX <= 87 && deltaX >= -87 && deltaY <= 65 && deltaY >= -65) {
-                DecreaseHP(20);
+                if (!isInvisible) {
+                    DecreaseHP(20);
+                    BecomeInvisible();
+                }
                 Destroy(r);
                 return;
             }
         }
     }
+
+    private void BecomeInvisible() {
+        HeadImage.x = 1000;
+        isInvisible = true;
+    }
+
+    private void BecomeNormal() {
+        HeadImage.x = 800;
+        isInvisible = false;
+    }
+
+    private float timer = 0;
+
+    private void InvisibleTime() {
+        if (!isInvisible) {
+            return;
+        }
+        timer += deltaTime;
+
+        if(timer>0.8f){
+            timer = 0;
+            BecomeNormal();
+        }
+    }
+
 }

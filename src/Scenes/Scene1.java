@@ -22,9 +22,22 @@ public class Scene1 extends Scene {
         AddGameObject(new GameObject("Rocks", 0, 0, 2));
         //在该组件里面给物体产生子物体 即炸弹
         AddComponent(new RocksCreatAndDestoryComponent());
-        //伤害检测组件
-        Find("Boat").AddComponent(new BoatDamagedComponent(100, Find("Rocks")));
+
         //开火组件
         Find("Boat").AddComponent(new FireComponent(Find("Rocks")));
+
+        AddGameObject(new GameObject("HPBackGround",805,578,4));
+        AddComponent(new RenderComponent("hpBar.jpg"));
+        AddGameObject(new GameObject("HPBar",810,583,5));
+        AddComponent(new RenderComponent("hp.jpg"));
+        AddGameObject(new GameObject("HeadImage1",800,0,5));
+        AddComponent(new RenderComponent("normal.jpg"));
+        AddGameObject(new GameObject("HeadImage2",800,0,4));
+        AddComponent(new RenderComponent("hurt.jpg"));
+
+
+
+        //伤害检测组件
+        Find("Boat").AddComponent(new BoatDamagedComponent(100, Find("Rocks"),Find("HPBar"),Find("HeadImage1")));
     }
 }

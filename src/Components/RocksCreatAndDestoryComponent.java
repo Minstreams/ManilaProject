@@ -14,7 +14,7 @@ public class RocksCreatAndDestoryComponent extends ComponentSystem {
 
     @Override
     protected void function() {
-        if (timeLoop >= 2) {
+        if (timeLoop >= 0.4f) {
             timeLoop = 0;
             randomPositionY = random.nextInt(550);
             CreatOneRock(800, randomPositionY);
