@@ -1,9 +1,9 @@
 package Components;
 
 import Main.*;
-import Systems.InputSystem;
+import Systems.ComponentSystem;
 
-public class ControllerComponent extends InputSystem {
+public class ControllerComponent extends ComponentSystem {
 
     private float speed = 0;
 

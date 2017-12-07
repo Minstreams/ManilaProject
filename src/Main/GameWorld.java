@@ -1,6 +1,6 @@
 package Main;
 
-import Systems.InputSystem;
+import Systems.ComponentSystem;
 import Systems.MySystem;
 import Systems.RenderSystem;
 
@@ -38,7 +38,7 @@ public class GameWorld extends TimerTask{
 		currentScene = toLoad;
 		currentScene.LoadScene();
 		RenderSystem.Start();
-		InputSystem.Start();
+		ComponentSystem.Start();
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class GameWorld extends TimerTask{
 	 */
 	private void GameLoop() {
 		RenderSystem.Function();
-		InputSystem.Function();
+		ComponentSystem.Function();
 	}
 	@Override
 	public void run() {

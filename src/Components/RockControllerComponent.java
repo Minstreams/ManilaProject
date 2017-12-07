@@ -1,8 +1,8 @@
 package Components;
 
-import Systems.InputSystem;
+import Systems.ComponentSystem;
 
-public class RockControllerComponent extends InputSystem {
+public class RockControllerComponent extends ComponentSystem {
 
     private float speedX;
     private float speedY;

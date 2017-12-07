@@ -2,9 +2,9 @@ package Components;
 
 import Main.Input;
 import Main.KeyCode;
-import Systems.InputSystem;
+import Systems.ComponentSystem;
 
-public class BoatControllerComponent extends InputSystem {
+public class BoatControllerComponent extends ComponentSystem {
 
 	private float speedX = 1;
 	private float speedY = 1;

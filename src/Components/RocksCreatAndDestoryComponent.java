@@ -1,10 +1,10 @@
 package Components;
 
 import Main.GameObject;
-import Systems.InputSystem;
+import Systems.ComponentSystem;
 import java.util.Random;
 
-public class RocksCreatAndDestoryComponent extends InputSystem {
+public class RocksCreatAndDestoryComponent extends ComponentSystem {
 
     private float timeLoop=0;
     private int randomPositionY;
