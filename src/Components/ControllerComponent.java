@@ -16,7 +16,7 @@ public class ControllerComponent extends ComponentSystem {
     }
 
     @Override
-    protected void start() {
+    public void start() {
 
     }
 

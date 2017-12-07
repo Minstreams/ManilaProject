@@ -21,7 +21,7 @@ public class RocksCreatAndDestoryComponent extends ComponentSystem {
     }
 
     @Override
-    protected void start() {
+    public void start() {
 
     }
 

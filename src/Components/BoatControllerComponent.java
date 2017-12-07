@@ -35,7 +35,7 @@ public class BoatControllerComponent extends ComponentSystem {
 	}
 
 	@Override
-	protected void start() {
+	public void start() {
 		// TODO Auto-generated method stub
 
 	}
