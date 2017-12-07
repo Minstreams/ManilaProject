@@ -3,7 +3,9 @@ package Main;
 import java.lang.String;
 import java.util.ArrayList;
 
+import Systems.ComponentSystem;
 import Systems.MySystem;
+import Systems.RenderSystem;
 
 /**
  * 游戏物体
@@ -47,6 +49,7 @@ public class GameObject {
     public void AddComponent(MySystem component) {
         components.add(component);
         component.gameObject = this;
+        component.start();
     }
 
     @SuppressWarnings("unchecked")
