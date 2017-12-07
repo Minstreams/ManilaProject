@@ -33,7 +33,7 @@ public class RocksCreatAndDestoryComponent extends ComponentSystem {
     private  void CreatOneRock(int xPosition,int yPosition){
         GameObject rockChild=new GameObject("RockChild",xPosition,yPosition);
         gameObject.scene.AddGameObject(rockChild);
-        rockChild.AddComponent(new RenderComponent("rock,jpg"));
+        rockChild.AddComponent(new RenderComponent("rock.jpg"));
         rockChild.AddComponent(new RockControllerComponent(xPosition,yPosition));
     }
 }
