@@ -32,7 +32,7 @@ public class RenderComponent extends RenderSystem {
     }
 
     @Override
-    protected void start() {
+    public void start() {
         jPanel = createPanel(imageIcon, gameObject.x, gameObject.y);
         gameView.PaintGameObject(this, gameObject.layer);
     }

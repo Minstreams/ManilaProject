@@ -19,7 +19,7 @@ public class RockControllerComponent extends ComponentSystem {
     }
 
     @Override
-    protected void start() {
+    public void start() {
         gameObject.x=800;
     }
 }
