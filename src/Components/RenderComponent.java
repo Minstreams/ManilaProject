@@ -14,20 +14,8 @@ public class RenderComponent extends RenderSystem {
     private ImageIcon imageIcon;
     private JPanel jPanel;
 
-    public ImageIcon getImageIcon() {
-        return imageIcon;
-    }
-
-    public void setImageIcon(ImageIcon imageIcon) {
-        this.imageIcon = imageIcon;
-    }
-
     public JPanel getjPanel() {
 		return jPanel;
-	}
-
-	public void setjPanel(JPanel jPanel) {
-		this.jPanel = jPanel;
 	}
 
 	public RenderComponent(String name) {
@@ -53,8 +41,6 @@ public class RenderComponent extends RenderSystem {
         return image;
     }
 
-    
-    
     private static JPanel createPanel(ImageIcon icon, int x, int y) {
         // 创建一个 JPanel, 使用 1 行 1 列的网格布局
         JPanel panel = new JPanel(new GridLayout(1, 1));
@@ -85,6 +71,7 @@ public class RenderComponent extends RenderSystem {
     public void OnDestroy() {
         components.remove(this);
         gameObject.getComponents().remove(this);
+        gameView.Destroy(this);
         System.out.println("RenderComponent Removed!");
     }
 }

@@ -43,4 +43,8 @@ public class GameView extends JFrame {
 	public void PaintGameObject(RenderComponent rc,int layer) {
 		jLayeredPane.add(rc.getjPanel(), new Integer(layer) );
 	}
+
+	public void Destroy(RenderComponent rc) {
+		jLayeredPane.remove(rc.getjPanel() );
+	}
 }
