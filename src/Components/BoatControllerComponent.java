@@ -23,13 +23,13 @@ public class BoatControllerComponent extends ComponentSystem {
     @Override
     protected void function() {
         float x = 0,y = 0;
-        if(Input.GetKey(KeyCode.Left) && gameObject.x >= -25) {
+        if(Input.GetKey(KeyCode.Left) && gameObject.x >= -26) {
             x-=1;
         }
         if(Input.GetKey(KeyCode.Right) && gameObject.x <= 650) {
             x+=1;
         }
-        if(Input.GetKey(KeyCode.Up) && gameObject.y >= -40) {
+        if(Input.GetKey(KeyCode.Up) && gameObject.y >= -50) {
             y-=1;
         }
         if(Input.GetKey(KeyCode.Down) && gameObject.y <= 450) {
