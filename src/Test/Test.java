@@ -2,8 +2,7 @@ package Test;
 
 import Components.RenderComponent;
 import Main.GameWorld;
-import Scenes.Scene01;
-import Scenes.StartScene;
+import Scenes.*;
 import Systems.RenderSystem;
 
 public class Test {
