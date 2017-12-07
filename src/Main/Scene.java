@@ -3,11 +3,15 @@ package Main;
 import java.util.ArrayList;
 import java.util.List;
 
+import Systems.MySystem;
+
 /**
  * 任意一个场景继承这个
  */
 public abstract class Scene {
     List<GameObject> gameObjects = new ArrayList<GameObject>();
+    
+    static GameObject currentGameObject = null;
 
     public Scene() {
         LoadScene();
@@ -25,9 +29,15 @@ public abstract class Scene {
      */
     protected GameObject AddGameObject(GameObject gameObject) {
         gameObjects.add(gameObject);
+        currentGameObject = gameObject;
         return gameObject;
     }
 
+    protected void AddComponent(MySystem component) {
+    	if(currentGameObject!=null) {
+    		currentGameObject.AddComponent(component);
+    	}
+    }
     /**
      * 根据名字找到游戏物体
      *
