@@ -27,7 +27,7 @@ public abstract class Scene {
      * @param gameObject
      * @return
      */
-    protected GameObject AddGameObject(GameObject gameObject) {
+    public GameObject AddGameObject(GameObject gameObject) {
         gameObjects.add(gameObject);
         gameObject.scene = this;
         currentGameObject = gameObject;
@@ -64,5 +64,9 @@ public abstract class Scene {
             return gameObjects.get(index);
         }
         return  null;
+    }
+
+    public List<GameObject> getGameObjects() {
+        return gameObjects;
     }
 }

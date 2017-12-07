@@ -75,7 +75,6 @@ public class GameObject {
         if(parent!=null){
             parent.children.remove(this);
         }
-        scene.gameObjects.remove(this);
     }
 
 }

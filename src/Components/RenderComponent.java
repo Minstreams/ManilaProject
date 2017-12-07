@@ -70,7 +70,6 @@ public class RenderComponent extends RenderSystem {
     @Override
     public void OnDestroy() {
         components.remove(this);
-        gameObject.getComponents().remove(this);
         gameView.Destroy(this);
         System.out.println("RenderComponent Removed!");
     }
