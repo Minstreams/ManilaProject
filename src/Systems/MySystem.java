@@ -29,4 +29,8 @@ public abstract class MySystem implements ISystem{
 	 * 组件层中定义，用于初始化
 	 */
 	protected abstract void start();
+
+	protected GameObject Find(String name){
+		return gameWorld.getCurrentScene().Find(name);
+	}
 }

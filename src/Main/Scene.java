@@ -44,7 +44,7 @@ public abstract class Scene {
      * @param name
      * @return
      */
-    protected GameObject Find(String name) {
+    public GameObject Find(String name) {
         for (GameObject g : gameObjects) {
             if (g.name.equals(name)) {
                 return g;
@@ -58,7 +58,7 @@ public abstract class Scene {
      * @param index
      * @return
      */
-    protected GameObject Find(int index){
+    public GameObject Find(int index){
         if(gameObjects.size()>index){
             return gameObjects.get(index);
         }

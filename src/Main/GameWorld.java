@@ -55,4 +55,8 @@ public class GameWorld extends TimerTask{
 	public void run() {
 		GameLoop();
 	}
+
+	public Scene getCurrentScene() {
+		return currentScene;
+	}
 }
