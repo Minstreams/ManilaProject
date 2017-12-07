@@ -1,6 +1,5 @@
 package Components;
 
-import java.awt.Color;
 import java.awt.GridLayout;
 
 import javax.swing.ImageIcon;
@@ -77,5 +76,15 @@ public class RenderComponent extends RenderSystem {
         panel.add(label);
 
         return panel;
+    }
+
+    /**
+     * 析构时将自己从组件表列移除
+     */
+    @Override
+    public void OnDestroy() {
+        components.remove(this);
+        gameObject.getComponents().remove(this);
+        System.out.println("RenderComponent Removed!");
     }
 }

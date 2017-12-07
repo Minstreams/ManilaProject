@@ -47,15 +47,16 @@ public abstract class InputSystem extends MySystem {
      */
     public InputSystem() {
         components.add(this);
-        System.out.println("RenderComponent Added!");
+        System.out.println("InputComponent Added!");
     }
 
     /**
      * 析构时将自己从组件表列移除
      */
-    protected void finalize() {
+    @Override
+    public void OnDestroy() {
         components.remove(this);
-        System.out.println("RenderComponent Removed!");
+        System.out.println("InputComponent Removed!");
     }
 
 }

@@ -17,6 +17,9 @@ public abstract class MySystem implements ISystem{
 	
 	public static GameWorld gameWorld;
 
+	/**
+	 * 每帧时间
+	 */
 	public static float deltaTime;
 
 	public MySystem() {
@@ -33,6 +36,25 @@ public abstract class MySystem implements ISystem{
 	protected abstract void start();
 
 	protected GameObject Find(String name){
-		return gameWorld.getCurrentScene().Find(name);
+		return gameObject.scene.Find(name);
 	}
+
+	/**
+	 * 摧毁游戏物体
+	 * @param gameObject
+	 */
+	protected void Destroy(GameObject gameObject){
+		if(gameObject == null){
+			System.out.println("no GameObject to Destroy!");
+			return;
+		}
+		gameObject.OnDestroy();
+	}
+
+	protected void Destroy(MySystem component){
+		component.gameObject.getComponents().remove(component);
+		component.OnDestroy();
+	}
+
+	public abstract void OnDestroy();
 }

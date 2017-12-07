@@ -1,8 +1,6 @@
 package Systems;
 
 import java.util.ArrayList;
-
-import Main.GameObject;
 import Main.GameView;
 
 /**
@@ -52,13 +50,5 @@ public abstract class RenderSystem extends MySystem {
     public RenderSystem() {
         components.add(this);
         System.out.println("RenderComponent Added!");
-    }
-
-    /**
-     * 析构时将自己从组件表列移除
-     */
-    protected void finalize() {
-        components.remove(this);
-        System.out.println("RenderComponent Removed!");
     }
 }

@@ -29,6 +29,7 @@ public abstract class Scene {
      */
     protected GameObject AddGameObject(GameObject gameObject) {
         gameObjects.add(gameObject);
+        gameObject.scene = this;
         currentGameObject = gameObject;
         return gameObject;
     }
