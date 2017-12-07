@@ -1,6 +1,7 @@
 package Systems;
 
 import java.util.ArrayList;
+
 import Main.GameView;
 
 /**
@@ -11,10 +12,6 @@ import Main.GameView;
 public abstract class RenderSystem extends MySystem {
 
     public static GameView gameView = new GameView();
-
-
-
-
 
 
 //-----------------------------------分割线------------------------------------
@@ -29,8 +26,8 @@ public abstract class RenderSystem extends MySystem {
      */
     public static void Function() {
         //遍历
-        for (RenderSystem s : components) {
-            s.function();
+        for(int i = 0;i<components.size();i++){
+            components.get(i).function();
         }
     }
 
@@ -39,8 +36,8 @@ public abstract class RenderSystem extends MySystem {
      */
     public static void Start() {
         //遍历
-        for (RenderSystem s : components) {
-            s.start();
+        for(int i = 0;i<components.size();i++){
+            components.get(i).start();
         }
     }
 

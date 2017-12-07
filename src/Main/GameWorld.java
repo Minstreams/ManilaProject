@@ -23,8 +23,6 @@ public class GameWorld extends TimerTask{
 		MySystem.deltaTime = deltaTime/1000.0f;
 
 		LoadScene(scene);
-		RenderSystem.Start();
-		InputSystem.Start();
 		//开始游戏循环
 		this.timer.schedule(this,0,deltaTime);
 	}
@@ -39,6 +37,8 @@ public class GameWorld extends TimerTask{
 		}
 		currentScene = toLoad;
 		currentScene.LoadScene();
+		RenderSystem.Start();
+		InputSystem.Start();
 	}
 
 	/**

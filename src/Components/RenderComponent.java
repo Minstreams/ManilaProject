@@ -71,8 +71,9 @@ public class RenderComponent extends RenderSystem {
      */
     @Override
     public void OnDestroy() {
-        components.remove(this);
         gameView.Destroy(this);
+        jPanel = null;
+        components.remove(this);
         System.out.println("RenderComponent Removed!");
     }
 }
