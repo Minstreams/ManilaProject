@@ -20,6 +20,8 @@ public class GameWorld extends TimerTask{
 
 	public GameWorld(Scene scene){
 		MySystem.gameWorld = this;
+		MySystem.deltaTime = deltaTime/1000.0f;
+
 		LoadScene(scene);
 		RenderSystem.Start();
 		InputSystem.Start();
