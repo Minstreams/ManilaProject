@@ -14,6 +14,8 @@ public class GameWorld extends TimerTask{
 
 	private Timer timer = new Timer();
 
+	private int deltaTime = 10;
+
 	private Scene currentScene = null;
 
 	public GameWorld(Scene scene){
@@ -22,7 +24,7 @@ public class GameWorld extends TimerTask{
 		RenderSystem.Start();
 		InputSystem.Start();
 		//开始游戏循环
-		this.timer.schedule(this,0,10);
+		this.timer.schedule(this,0,deltaTime);
 	}
 
 	/**
@@ -45,7 +47,7 @@ public class GameWorld extends TimerTask{
 		}
 	}
 	/**
-	 * 游戏循环，每10毫秒调用
+	 * 游戏循环，每deltaTime毫秒调用
 	 */
 	private void GameLoop() {
 		RenderSystem.Function();
@@ -58,5 +60,9 @@ public class GameWorld extends TimerTask{
 
 	public Scene getCurrentScene() {
 		return currentScene;
+	}
+
+	public int getDeltaTime() {
+		return deltaTime;
 	}
 }
