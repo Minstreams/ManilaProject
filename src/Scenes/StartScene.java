@@ -20,6 +20,6 @@ public class StartScene extends Scene {
         AddGameObject(new GameObject("Boat",10,60,1));
         AddComponent(new RenderComponent("boat.gif"));
         //控制类组件
-        AddComponent(new BoatTestComponent(5,5));
+        AddComponent(new ControllerComponent(2));
     }
 }
