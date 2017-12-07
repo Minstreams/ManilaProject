@@ -16,9 +16,10 @@ public class StartScene extends Scene {
         //游戏场景
         AddGameObject(new GameObject("BackGround",0,0,0));
         AddComponent(new RenderComponent("sea.gif"));
-
+        //船儿
         AddGameObject(new GameObject("Boat",10,60,1));
         AddComponent(new RenderComponent("boat.gif"));
+        //控制类组件
         AddComponent(new BoatTestComponent(5,5));
     }
 }
