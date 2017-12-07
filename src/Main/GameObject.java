@@ -20,24 +20,18 @@ public class GameObject {
 	
 	private ArrayList<MySystem> components = new ArrayList<MySystem>();
 	
-	public GameObject() {
-		
-	}
-	
-	public GameObject(GameObject parent){
-		this.parent = parent;
-	}
-	
-	public GameObject(int x,int y,int layer){
+	public GameObject(String name,int x,int y,int layer){
+		this.name = name;
 		this.x = x;
 		this.y = y;
 		this.layer = layer;
 	}
 	
-	public GameObject(GameObject parent,int x,int y){
-		this.parent = parent;
+	public GameObject(String name,int x,int y){
+		this.name = name;
 		this.x = x;
 		this.y = y;
+		this.layer = 0;
 	}
 	
 	
