@@ -4,12 +4,12 @@ import Main.Input;
 import Main.KeyCode;
 import Systems.InputSystem;
 
-public class BoatTestComponent extends InputSystem {
+public class BoatControllerComponent extends InputSystem {
 
 	private float speedX = 1;
 	private float speedY = 1;
 	
-	public BoatTestComponent(float speedX,float speedY){
+	public BoatControllerComponent(float speedX,float speedY){
 		this.speedX = speedX;
 		this.speedY = speedY;
 	}
@@ -29,7 +29,7 @@ public class BoatTestComponent extends InputSystem {
 		if(Input.GetKey(KeyCode.S)) {
 			y+=1;
 		}
-		
+
 		gameObject.x += x * speedX;
 		gameObject.y += y * speedY;
 	}
