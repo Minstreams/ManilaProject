@@ -10,9 +10,10 @@ public class RocksCreatAndDestoryComponent extends InputSystem {
     private int randomPositionY;
     @Override
     protected void function() {
-        if(timeLoop==2){
+        if(timeLoop>=2){
             timeLoop=0;
-            System.out.println(Math.abs(new Random().nextInt())%10);
+            randomPositionY=Math.abs(new Random().nextInt())%10;
+            CreatOneRock(800,randomPositionY);
         }
         else{
             timeLoop+=deltaTime;
