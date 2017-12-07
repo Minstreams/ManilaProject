@@ -44,7 +44,7 @@ public abstract class MySystem implements ISystem{
 	 * 摧毁游戏物体
 	 * @param gameObject
 	 */
-	protected void Destroy(GameObject gameObject){
+	protected static void Destroy(GameObject gameObject){
 		if(gameObject == null){
 			System.out.println("no GameObject to Destroy!");
 			return;
@@ -53,7 +53,7 @@ public abstract class MySystem implements ISystem{
 		gameObject.scene.getGameObjects().remove(gameObject);
 	}
 
-	protected void Destroy(MySystem component){
+	protected static void Destroy(MySystem component){
 		component.OnDestroy();
 		component.gameObject.getComponents().remove(component);
 	}
