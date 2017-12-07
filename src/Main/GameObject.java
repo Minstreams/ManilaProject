@@ -40,10 +40,11 @@ public class GameObject {
     }
 
 
-    public void AddChild(GameObject child) {
+    public GameObject AddChild(GameObject child) {
         scene.AddGameObject(child);
         children.add(child);
         child.parent = this;
+        return child;
     }
 
     public void AddComponent(MySystem component) {
