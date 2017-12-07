@@ -1,6 +1,7 @@
 package Main;
 
 import Systems.InputSystem;
+import Systems.MySystem;
 import Systems.RenderSystem;
 
 import java.util.Timer;
@@ -16,11 +17,12 @@ public class GameWorld extends TimerTask{
 	private Scene currentScene = null;
 
 	public GameWorld(Scene scene){
+		MySystem.gameWorld = this;
 		LoadScene(scene);
 		RenderSystem.Start();
 		InputSystem.Start();
 		//开始游戏循环
-		this.timer.schedule(this,0,25);
+		this.timer.schedule(this,0,10);
 	}
 
 	/**
@@ -43,7 +45,7 @@ public class GameWorld extends TimerTask{
 		}
 	}
 	/**
-	 * 游戏循环，每25毫秒调用
+	 * 游戏循环，每10毫秒调用
 	 */
 	private void GameLoop() {
 		RenderSystem.Function();
