@@ -22,18 +22,8 @@ public abstract class ComponentSystem extends MySystem {
      */
     public static void Function() {
         //遍历
-        for(int i = 0;i<components.size();i++){
+        for (int i = 0; i < components.size(); i++) {
             components.get(i).function();
-        }
-    }
-
-    /**
-     * 遍历调用所有组件Start方法
-     */
-    public static void Start() {
-        //遍历
-        for(int i = 0;i<components.size();i++){
-            components.get(i).start();
         }
     }
 

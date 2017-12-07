@@ -37,8 +37,7 @@ public class GameWorld extends TimerTask{
 		}
 		currentScene = toLoad;
 		currentScene.LoadScene();
-		RenderSystem.Start();
-		ComponentSystem.Start();
+		//ComponentSystem.Start();
 	}
 
 	/**
