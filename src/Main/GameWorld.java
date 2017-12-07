@@ -10,6 +10,7 @@ import java.util.TimerTask;
 游戏世界类，游戏循环，起始均从这里开始
  */
 public class GameWorld extends TimerTask{
+
 	private Timer timer = new Timer();
 
 	private Scene currentScene = null;

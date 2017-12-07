@@ -53,7 +53,4 @@ public class KeyCode {
     public static int Up = 38;
     public static int Right = 39;
     public static int Down = 40;
-
-
-
 }
