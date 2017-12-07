@@ -69,14 +69,20 @@ public class GameObject {
     }
 
     public void OnDestroy() {
-        for (GameObject child : children) {
-            child.OnDestroy();
+        for (int i = 0; i < children.size(); i++) {
+            GameObject child = children.get(i);
+            if (child != null) {
+                child.OnDestroy();
+            }
         }
-        for (MySystem com : components) {
-            com.OnDestroy();
+        for (int i = 0; i < components.size(); i++) {
+            MySystem com = components.get(i);
+            if (com != null) {
+                com.OnDestroy();
+            }
         }
         components.clear();
-        if(parent!=null){
+        if (parent != null) {
             parent.children.remove(this);
         }
     }

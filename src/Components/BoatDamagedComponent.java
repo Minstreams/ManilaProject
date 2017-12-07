@@ -57,7 +57,7 @@ public class BoatDamagedComponent extends ComponentSystem {
 
 
     private void Die() {
-
+        gameObject.GetComponent(VictoryCheckComponent.class).Lose();
     }
 
     private void ScanRocks() {

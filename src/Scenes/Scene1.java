@@ -15,6 +15,7 @@ public class Scene1 extends Scene {
         //船儿
         AddGameObject(new GameObject("Boat", 10, 60, 1));
         AddComponent(new RenderComponent("boat.gif"));
+        AddComponent(new VictoryCheckComponent());
         //控制类组件
         AddComponent(new BoatControllerComponent(4));
 
@@ -35,6 +36,9 @@ public class Scene1 extends Scene {
         AddGameObject(new GameObject("HeadImage2",800,0,4));
         AddComponent(new RenderComponent("hurt.jpg"));
 
+        AddGameObject(new GameObject("MouseFollower",0,0,8));
+        AddComponent(new FollowMouseComponent());
+        AddComponent(new RenderComponent("g1.jpg"));
 
 
         //伤害检测组件
