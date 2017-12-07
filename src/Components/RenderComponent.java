@@ -15,10 +15,10 @@ public class RenderComponent extends RenderSystem {
     private JPanel jPanel;
 
     public JPanel getjPanel() {
-		return jPanel;
-	}
+        return jPanel;
+    }
 
-	public RenderComponent(String name) {
+    public RenderComponent(String name) {
         super();
         this.name = name;
         imageIcon = getImageFile(name);
@@ -26,13 +26,15 @@ public class RenderComponent extends RenderSystem {
 
     @Override
     protected void function() {
-        jPanel.setBounds(gameObject.x, gameObject.y, imageIcon.getIconWidth(), imageIcon.getIconHeight());
+        if (jPanel != null) {
+            jPanel.setBounds(gameObject.x, gameObject.y, imageIcon.getIconWidth(), imageIcon.getIconHeight());
+        }
     }
 
     @Override
     protected void start() {
-        jPanel = createPanel(imageIcon,gameObject.x , gameObject.y);
-        gameView.PaintGameObject(this,gameObject.layer);
+        jPanel = createPanel(imageIcon, gameObject.x, gameObject.y);
+        gameView.PaintGameObject(this, gameObject.layer);
     }
 
     public static ImageIcon getImageFile(String name) {
@@ -44,8 +46,8 @@ public class RenderComponent extends RenderSystem {
     private static JPanel createPanel(ImageIcon icon, int x, int y) {
         // 创建一个 JPanel, 使用 1 行 1 列的网格布局
         JPanel panel = new JPanel(new GridLayout(1, 1));
-        
-        
+
+
         // 设置容器的位置和宽高
         panel.setBounds(x, y, icon.getIconWidth(), icon.getIconHeight());
 

@@ -10,11 +10,10 @@ import Systems.MySystem;
  */
 public abstract class Scene {
     List<GameObject> gameObjects = new ArrayList<GameObject>();
-    
+
     static GameObject currentGameObject = null;
 
     public Scene() {
-        LoadScene();
     }
 
     /**
@@ -24,6 +23,7 @@ public abstract class Scene {
 
     /**
      * 向场景里添加游戏物体
+     *
      * @param gameObject
      * @return
      */
@@ -35,10 +35,11 @@ public abstract class Scene {
     }
 
     protected void AddComponent(MySystem component) {
-    	if(currentGameObject!=null) {
-    		currentGameObject.AddComponent(component);
-    	}
+        if (currentGameObject != null) {
+            currentGameObject.AddComponent(component);
+        }
     }
+
     /**
      * 根据名字找到游戏物体
      *
@@ -56,22 +57,23 @@ public abstract class Scene {
 
     /**
      * 根据物体序号找到物体
+     *
      * @param index
      * @return
      */
-    public GameObject Find(int index){
-        if(gameObjects.size()>index){
+    public GameObject Find(int index) {
+        if (gameObjects.size() > index) {
             return gameObjects.get(index);
         }
-        return  null;
+        return null;
     }
 
     public List<GameObject> getGameObjects() {
         return gameObjects;
     }
 
-    public void OnDestroy(){
-        for(GameObject gameObject:gameObjects){
+    public void OnDestroy() {
+        for (GameObject gameObject : gameObjects) {
             gameObject.OnDestroy();
         }
         gameObjects.clear();

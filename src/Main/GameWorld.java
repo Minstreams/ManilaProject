@@ -38,6 +38,7 @@ public class GameWorld extends TimerTask{
 			currentScene.OnDestroy();
 		}
 		currentScene = toLoad;
+		currentScene.LoadScene();
 	}
 
 	/**
