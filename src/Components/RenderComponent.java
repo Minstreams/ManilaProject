@@ -52,7 +52,7 @@ public class RenderComponent extends RenderSystem {
         panel.setBounds(x, y, icon.getIconWidth(), icon.getIconHeight());
 
         // 设置 panel 的背景
-        panel.setOpaque(true);
+        panel.setOpaque(false);
 
         // 创建标签并设置相应属性
         JLabel label = new JLabel();

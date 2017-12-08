@@ -22,7 +22,7 @@ public class Scene1 extends Scene {
         //产生石头,在该物体里面持续产生
         AddGameObject(new GameObject("Rocks", 0, 0, 2));
         //在该组件里面给物体产生子物体 即炸弹
-        AddComponent(new RocksCreatAndDestoryComponent());
+        AddComponent(new RocksCreatAndDestoryComponent(0.4f,"rock.jpg",2,0));
 
         //开火组件
         Find("Boat").AddComponent(new FireComponent(Find("Rocks")));
@@ -38,7 +38,7 @@ public class Scene1 extends Scene {
 
         AddGameObject(new GameObject("MouseFollower",0,0,8));
         AddComponent(new FollowMouseComponent());
-        AddComponent(new RenderComponent("g1.jpg"));
+        AddComponent(new RenderComponent("00.png"));
 
 
         //伤害检测组件

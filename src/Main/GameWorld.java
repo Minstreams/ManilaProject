@@ -14,7 +14,7 @@ public class GameWorld extends TimerTask{
 
 	private Timer timer = new Timer();
 
-	private int deltaTime = 10;
+	private int deltaTime = 10;//每帧10ms
 
 	private Scene currentScene = null;
 
@@ -65,9 +65,5 @@ public class GameWorld extends TimerTask{
 
 	public Scene getCurrentScene() {
 		return currentScene;
-	}
-
-	public int getDeltaTime() {
-		return deltaTime;
 	}
 }

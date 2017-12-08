@@ -10,7 +10,7 @@ import javax.swing.*;
  * 游戏界面类
  */
 public class GameView {
-    JFrame jFrame = new JFrame("test");
+    JFrame jFrame = new JFrame("Sailing!!!");
     JLayeredPane jLayeredPane = new JLayeredPane();
 
     public GameView() throws HeadlessException {
@@ -25,30 +25,32 @@ public class GameView {
         jFrame.addKeyListener(inputController);
     }
 
+    /**
+     * 创建窗口
+     */
     public void CreatView() {
+        //width = 800 + 159 + 8, height = 600 + 36
         jFrame.setSize(967, 636);
         jFrame.setContentPane(jLayeredPane);
-
-		/*
-        JLabel jLabel = new JLabel();
-		ImageIcon icon = RenderComponent.getImageFile("g2.jpg");
-		jLabel.setIcon(icon);
-		jLabel.setOpaque(false);
-		jPanel.add(jLabel);
-		*/
         jFrame.setVisible(true);
-
-        //jPanel.addMouseListener(new MouseContrllor());
     }
 
+    /**
+     * 显示相应物体
+     * @param rc
+     * @param layer
+     */
     public void PaintGameObject(RenderComponent rc, int layer) {
         jLayeredPane.add(rc.getjPanel(), new Integer(layer));
-        //jFrame.setContentPane(jLayeredPane);
-        //jFrame.setVisible(true);
     }
 
+    /**
+     * 删除相应物体
+     * @param rc
+     */
     public void Destroy(RenderComponent rc) {
         jLayeredPane.remove(rc.getjPanel());
+        //刷新
         jFrame.setContentPane(jLayeredPane);
     }
 }

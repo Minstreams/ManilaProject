@@ -10,7 +10,7 @@ import Main.Scene;
  * @author Minstreams
  *
  */
-public abstract class MySystem implements ISystem{
+public abstract class MySystem{
 	/**
 	 * 关联的GameObject
 	 */
@@ -53,14 +53,25 @@ public abstract class MySystem implements ISystem{
 		gameObject.scene.getGameObjects().remove(gameObject);
 	}
 
+	/**
+	 * 摧毁游戏组件
+	 * @param component
+	 */
 	protected static void Destroy(MySystem component){
 		component.OnDestroy();
 		component.gameObject.getComponents().remove(component);
 	}
 
+	/**
+	 * 加载场景
+	 * @param toLoad
+	 */
 	protected void LoadScene(Scene toLoad){
 		gameWorld.LoadScene(toLoad);
 	}
 
+	/**
+	 * 被摧毁时调用的方法
+	 */
 	public abstract void OnDestroy();
 }

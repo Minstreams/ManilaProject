@@ -19,6 +19,12 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
         return keyCondition[keyCode];
     }
 
+    /**
+     * 当某按键按下瞬间返回true
+     *
+     * @param keyCode
+     * @return
+     */
     public static boolean GetKeyDown(int keyCode) {
         if (keyDownCondition[keyCode]) {
             keyDownCondition[keyCode] = false;
@@ -27,6 +33,12 @@ public class Input implements KeyListener, MouseListener, MouseMotionListener {
         return false;
     }
 
+    /**
+     * 当某按键松开瞬间返回true
+     *
+     * @param keyCode
+     * @return
+     */
     public static boolean GetKeyUp(int keyCode) {
         if (keyUpCondition[keyCode]) {
             keyUpCondition[keyCode] = false;

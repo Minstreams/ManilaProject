@@ -13,17 +13,17 @@ import Systems.RenderSystem;
  * @author 47465
  */
 public class GameObject {
-    public String name;
-    public int x;
-    public int y;
-    public int layer;
+    public String name;//名称
+    public int x;//横坐标
+    public int y;//纵坐标
+    public int layer;//图层
 
-    public Scene scene;
+    public Scene scene;//关联的场景
 
-    public GameObject parent = null;
-    public ArrayList<GameObject> children = new ArrayList<GameObject>();
+    public GameObject parent = null;//父物体
+    public ArrayList<GameObject> children = new ArrayList<GameObject>();//子物体表列
 
-    private ArrayList<MySystem> components = new ArrayList<MySystem>();
+    private ArrayList<MySystem> components = new ArrayList<MySystem>();//组件表列
 
     public GameObject(String name, int x, int y, int layer) {
         this.name = name;
@@ -39,7 +39,12 @@ public class GameObject {
         this.layer = 0;
     }
 
-
+    /**
+     * 添加子物体
+     *
+     * @param child
+     * @return
+     */
     public GameObject AddChild(GameObject child) {
         scene.AddGameObject(child);
         children.add(child);
@@ -47,12 +52,24 @@ public class GameObject {
         return child;
     }
 
+    /**
+     * 添加组件
+     *
+     * @param component
+     */
     public void AddComponent(MySystem component) {
         components.add(component);
         component.gameObject = this;
         component.start();
     }
 
+    /**
+     * 根据类型获取组件
+     *
+     * @param c
+     * @param <T>
+     * @return
+     */
     @SuppressWarnings("unchecked")
     public <T> T GetComponent(Class<T> c) {
         for (int i = 0; i < components.size(); i++) {
@@ -64,10 +81,9 @@ public class GameObject {
         return null;
     }
 
-    public ArrayList<MySystem> getComponents() {
-        return components;
-    }
-
+    /**
+     * 摧毁时调用
+     */
     public void OnDestroy() {
         for (int i = 0; i < children.size(); i++) {
             GameObject child = children.get(i);
@@ -87,4 +103,7 @@ public class GameObject {
         }
     }
 
+    public ArrayList<MySystem> getComponents() {
+        return components;
+    }
 }

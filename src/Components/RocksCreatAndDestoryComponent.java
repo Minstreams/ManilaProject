@@ -8,13 +8,25 @@ import java.util.Random;
 
 public class RocksCreatAndDestoryComponent extends ComponentSystem {
 
+    private float rockCreateTime;
+    private String rockName;
+    private float speedX;
+    private float speedY;
+
     private float timeLoop = 0;
     private int randomPositionY;
     private Random random = new Random();
 
+    public RocksCreatAndDestoryComponent(float rockCreateTime, String rockName, float speedX, float speedY) {
+        this.rockCreateTime = rockCreateTime;
+        this.rockName = rockName;
+        this.speedX = speedX;
+        this.speedY = speedY;
+    }
+
     @Override
     protected void function() {
-        if (timeLoop >= 0.4f) {
+        if (timeLoop >= rockCreateTime) {
             timeLoop = 0;
             randomPositionY = random.nextInt(550);
             CreatOneRock(800, randomPositionY);
@@ -31,7 +43,7 @@ public class RocksCreatAndDestoryComponent extends ComponentSystem {
     private void CreatOneRock(int xPosition, int yPosition) {
         System.out.println("x:" + xPosition + ";y:" + yPosition);
         GameObject g = gameObject.AddChild(new GameObject("RockChild", xPosition, yPosition, gameObject.layer));
-        g.AddComponent(new RenderComponent("rock.jpg"));
-        g.AddComponent(new RockControllerComponent(2, 3));
+        g.AddComponent(new RenderComponent(rockName));
+        g.AddComponent(new RockControllerComponent(speedX, speedY));
     }
 }
