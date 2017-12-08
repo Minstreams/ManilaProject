@@ -17,7 +17,7 @@ public class PointCountComponent extends ComponentSystem {
         //每秒增加10points
         this.points += 10 * deltaTime;
 
-        //检查成就
+        //检查得分成就
         CheckAchievement();
         //检查胜利
         CheckVictory();
@@ -35,71 +35,76 @@ public class PointCountComponent extends ComponentSystem {
     }
 
     private void CheckAchievement() {
-        //根据关卡数
-        switch (VictoryCheckComponent.level) {
-            case 1:
-                if (points >= (victoryPoints * (float)(achievementProgress / 4))) {
-                    //调用得分成就
-                    switch(achievementProgress){
+        if (points >= (victoryPoints * achievementProgress * 1.0f / 4)) {
+            //调用得分成就
+            switch (VictoryCheckComponent.level) {
+                //第一关
+                case 1:
+                    switch (achievementProgress) {
                         case 1:
+                            AchievementComponent.ShowAchivement("小试牛刀25%", "在第一关达到250分。");
                             break;
                         case 2:
+                            AchievementComponent.ShowAchivement("小试牛刀50%", "在第一关达到500分。");
                             break;
                         case 3:
+                            AchievementComponent.ShowAchivement("小试牛刀75%", "在第一关达到750分。");
                             break;
                         default:
                             break;
                     }
-                    achievementProgress += 1;
-                }
-                break;
-            case 2:
-                if (points >= (victoryPoints * (float)(achievementProgress / 4))) {
-                    //调用得分成就
-                    switch(achievementProgress){
-                        case 1:
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        default:
-                            break;
-                    }
-                    achievementProgress += 1;
-                }
-                break;
-            case 3:
-                if (points >= (victoryPoints * (float)(achievementProgress / 4))) {
-                    //调用得分成就
-                    switch(achievementProgress){
-                        case 1:
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        default:
-                            break;
-                    }
-                    achievementProgress += 1;
-                }
-                break;
-            default:
                     break;
+                //第二关
+                case 2:
+                    switch (achievementProgress) {
+                        case 1:
+                            AchievementComponent.ShowAchivement("大展身手25%", "在第二关达到250分。");
+                            break;
+                        case 2:
+                            AchievementComponent.ShowAchivement("大展身手50%", "在第二关达到500分。");
+                            break;
+                        case 3:
+                            AchievementComponent.ShowAchivement("大展身手75%", "在第二关达到750分。");
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                //第三关
+                case 3:
+                    switch (achievementProgress) {
+                        case 1:
+                            AchievementComponent.ShowAchivement("天下无双25%", "在第三关达到250分。");
+                            break;
+                        case 2:
+                            AchievementComponent.ShowAchivement("天下无双50%", "在第三关达到500分。");
+                            break;
+                        case 3:
+                            AchievementComponent.ShowAchivement("天下无双75%", "在第三关达到750分。");
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            achievementProgress += 1;
         }
-
     }
 
     private void CheckVictory() {
         if (points >= victoryPoints) {
             //调用胜利成就
-            switch (VictoryCheckComponent.level){
+            switch (VictoryCheckComponent.level) {
                 case 1:
+                    AchievementComponent.ShowAchivement("杀鸡焉用牛刀", "通关第一关。");
                     break;
                 case 2:
+                    AchievementComponent.ShowAchivement("厉害厉害 给你鼓鼓掌", "通关第二关。");
                     break;
                 case 3:
+                    AchievementComponent.ShowAchivement("我说 别通关了这么个辣鸡游戏就太得意忘形了", "通关第三关。");
                     break;
                 default:
                     break;
