@@ -15,6 +15,7 @@ public class FireComponent extends ComponentSystem {
     private float shellSpeed = 8;
 
     private AudioClipComponent audio1;
+    private AudioClipComponent audio2;
 
     public FireComponent(GameObject rocks) {
         this.rocks = rocks;
@@ -24,6 +25,8 @@ public class FireComponent extends ComponentSystem {
     public void start() {
         audio1 = new AudioClipComponent("Launch.wav", false);
         gameObject.AddComponent(audio1);
+        audio2 = new AudioClipComponent("HitRock.wav", false);
+        gameObject.AddComponent(audio2);
     }
 
     @Override
@@ -70,6 +73,7 @@ public class FireComponent extends ComponentSystem {
             if (deltaX <= 30 && deltaX >= -30 && deltaY <= 27 && deltaY >= -27) {
                 Destroy(r);
                 gameObject.GetComponent(PointCountComponent.class).AddPoint(50);
+                audio2.Play();
                 Destroy(shell);
                 return;
             }

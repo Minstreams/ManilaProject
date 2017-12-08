@@ -58,7 +58,9 @@ public class AudioClipComponent extends ComponentSystem {
         super.OnDestroy();
         Stop();
         try {
-            audioStream.close();
+            if(audioStream!=null) {
+                audioStream.close();
+            }
         } catch (IOException ioe) {
             ioe.printStackTrace();
         }

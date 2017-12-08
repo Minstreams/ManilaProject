@@ -12,6 +12,7 @@ public class BoatDamagedComponent extends ComponentSystem {
 
     private GameObject HPBar;
     private GameObject HeadImage;
+    private AudioClipComponent audio1;
 
     public BoatDamagedComponent(int maxHP, GameObject rocks, GameObject HPBar, GameObject headImage) {
         this.maxHP = maxHP;
@@ -23,7 +24,8 @@ public class BoatDamagedComponent extends ComponentSystem {
 
     @Override
     public void start() {
-
+        audio1 = new AudioClipComponent("Launch2.wav", false);
+        gameObject.AddComponent(audio1);
     }
 
     @Override
@@ -41,6 +43,10 @@ public class BoatDamagedComponent extends ComponentSystem {
 
     private void DecreaseHP(int value) {
         this.HP -= value;
+        audio1.Play();
+        if(this.HP<=20){
+            AchievementComponent.ShowAchivement("你的生命已是风中残烛！","再挨一下就要死了。");
+        }
         if (this.HP <= 0) {
             this.HP = 0;
             Die();
