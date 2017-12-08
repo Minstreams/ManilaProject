@@ -39,7 +39,14 @@ public class AudioClipComponent extends ComponentSystem {
     }
 
     public void Play() {
-        AudioPlayer.player.start(audioStream);
+        try {
+            Stop();
+            audioStream.reset();
+            audioStream.mark(1000000);
+            AudioPlayer.player.start(audioStream);
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
     }
 
     public void Stop() {
@@ -52,8 +59,7 @@ public class AudioClipComponent extends ComponentSystem {
         Stop();
         try {
             audioStream.close();
-        }
-        catch (IOException ioe){
+        } catch (IOException ioe) {
             ioe.printStackTrace();
         }
     }
