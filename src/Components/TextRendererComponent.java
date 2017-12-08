@@ -32,7 +32,6 @@ public class TextRendererComponent extends RenderSystem {
         m_JTextField.setText(mString01);
         m_JTextField.setEditable(false);
 
-
         panel.add(m_JTextField);
 
         jPanel = panel;

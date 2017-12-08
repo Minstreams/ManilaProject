@@ -41,7 +41,6 @@ public class RocksCreatAndDestoryComponent extends ComponentSystem {
     }
 
     private void CreatOneRock(int xPosition, int yPosition) {
-        System.out.println("x:" + xPosition + ";y:" + yPosition);
         GameObject g = gameObject.AddChild(new GameObject("RockChild", xPosition, yPosition, gameObject.layer));
         g.AddComponent(new RenderComponent(rockName));
         g.AddComponent(new RockControllerComponent(speedX, speedY));

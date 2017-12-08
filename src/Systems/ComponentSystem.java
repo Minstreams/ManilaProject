@@ -32,7 +32,7 @@ public abstract class ComponentSystem extends MySystem {
      */
     public ComponentSystem() {
         components.add(this);
-        System.out.println("InputComponent Added!");
+        //System.out.println("InputComponent Added!");
     }
 
     /**
@@ -41,7 +41,7 @@ public abstract class ComponentSystem extends MySystem {
     @Override
     public void OnDestroy() {
         components.remove(this);
-        System.out.println("InputComponent Removed!");
+        //System.out.println("InputComponent Removed!");
     }
 
 }

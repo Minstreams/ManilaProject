@@ -41,7 +41,7 @@ public abstract class RenderSystem extends MySystem {
      */
     public RenderSystem() {
         components.add(this);
-        System.out.println("RenderComponent Added!");
+        //System.out.println("RenderComponent Added!");
     }
 
     @Override
@@ -64,6 +64,6 @@ public abstract class RenderSystem extends MySystem {
         gameView.Destroy(this);
         jPanel = null;
         components.remove(this);
-        System.out.println("RenderComponent Removed!");
+        //System.out.println("RenderComponent Removed!");
     }
 }
