@@ -5,8 +5,6 @@ import Main.Input;
 import Main.KeyCode;
 import Systems.ComponentSystem;
 
-import java.util.ArrayList;
-
 public class FireComponent extends ComponentSystem {
 
     private GameObject rocks = null;

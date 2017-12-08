@@ -3,7 +3,6 @@ package Components;
 import Main.GameObject;
 import Systems.ComponentSystem;
 
-import java.util.Collections;
 import java.util.Random;
 
 public class RocksCreatAndDestoryComponent extends ComponentSystem {

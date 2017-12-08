@@ -3,7 +3,6 @@ package Components;
 import Systems.RenderSystem;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class TextRendererComponent extends RenderSystem {
 

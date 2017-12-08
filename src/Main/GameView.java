@@ -1,9 +1,9 @@
 package Main;
 
-import Components.*;
 import Systems.RenderSystem;
 
 import java.awt.*;
+import java.awt.image.MemoryImageSource;
 
 import javax.swing.*;
 
@@ -34,10 +34,16 @@ public class GameView {
         jFrame.setSize(967, 636);
         jFrame.setContentPane(jLayeredPane);
         jFrame.setVisible(true);
+
+        Image image = Toolkit.getDefaultToolkit().createImage(
+                new MemoryImageSource(0, 0, new int[0], 0, 0));
+        jFrame.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(image,
+                new Point(0, 0), null));
     }
 
     /**
      * 显示相应物体
+     *
      * @param rc
      * @param layer
      */
@@ -47,6 +53,7 @@ public class GameView {
 
     /**
      * 删除相应物体
+     *
      * @param rc
      */
     public void Destroy(RenderSystem rc) {

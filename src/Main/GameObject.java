@@ -3,9 +3,7 @@ package Main;
 import java.lang.String;
 import java.util.ArrayList;
 
-import Systems.ComponentSystem;
 import Systems.MySystem;
-import Systems.RenderSystem;
 
 /**
  * 游戏物体

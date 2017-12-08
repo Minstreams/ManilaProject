@@ -41,6 +41,7 @@ public class Scene3 extends Scene {
         AddGameObject(new GameObject("MouseFollower",0,0,8));
         AddComponent(new FollowMouseComponent());
         AddComponent(new RenderComponent("00.png"));
+        AddComponent(new AudioClipComponent("bgm3.wav",true));
 
 
         //伤害检测组件
