@@ -24,7 +24,7 @@ public class BoatDamagedComponent extends ComponentSystem {
 
     @Override
     public void start() {
-        audio1 = new AudioClipComponent("Launch2.wav", false);
+        audio1 = new AudioClipComponent("Crashed.wav", false);
         gameObject.AddComponent(audio1);
     }
 
