@@ -15,5 +15,13 @@ public class StartScene extends Scene {
         AddGameObject(new GameObject("StartScene",0,0,0));
         AddComponent(new RenderComponent("boat.jpg"));
         AddComponent(new MenuComponent());
+
+        AddGameObject(new GameObject("Start",525,450,1));
+        AddComponent(new RenderComponent("start.gif"));
+
+        AddGameObject(new GameObject("MouseFollower", 0, 0, 8));
+        AddComponent(new FollowMouseComponent());
+        AddComponent(new RenderComponent("cursor.png"));
+        AddComponent(new AudioClipComponent("bgm1.wav", true));
     }
 }

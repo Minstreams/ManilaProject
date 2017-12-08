@@ -42,7 +42,7 @@ public class AudioClipComponent extends ComponentSystem {
         try {
             Stop();
             audioStream.reset();
-            audioStream.mark(1000000);
+            audioStream.mark(10000000);
             AudioPlayer.player.start(audioStream);
         } catch (IOException ioe) {
             ioe.printStackTrace();

@@ -3,7 +3,6 @@ package Components;
 import Systems.RenderSystem;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class TextRendererComponent extends RenderSystem {
 
@@ -25,7 +24,7 @@ public class TextRendererComponent extends RenderSystem {
         // 创建一个 JPanel
         JPanel panel = new JPanel();
 
-        panel.setBounds((int)gameObject.x, (int)gameObject.y, 159, textField.getHeight());
+        panel.setBounds((int) gameObject.x, (int) gameObject.y + 35, 175, textField.getHeight() + 20);
         panel.setOpaque(false);
 
         textField.setEditable(false);
@@ -37,7 +36,7 @@ public class TextRendererComponent extends RenderSystem {
     @Override
     protected void function() {
         if (jPanel != null) {
-            jPanel.setBounds((int)gameObject.x, (int)gameObject.y, 159, textField.getHeight());
+            jPanel.setBounds((int) gameObject.x, (int) gameObject.y + 35, 175, textField.getHeight() + 20);
         }
     }
 }

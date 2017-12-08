@@ -1,7 +1,6 @@
 package Components;
 
 import Scenes.LoseScene;
-import Scenes.Scene1;
 import Scenes.WinScene;
 import Systems.ComponentSystem;
 

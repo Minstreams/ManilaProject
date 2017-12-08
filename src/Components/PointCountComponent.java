@@ -1,12 +1,19 @@
 package Components;
 
+import Main.GameObject;
+import Main.Scene;
 import Systems.ComponentSystem;
 
+/**
+ * 计分组件
+ */
 public class PointCountComponent extends ComponentSystem {
     private float victoryPoints;
 
     private float points = 0;
     private int achievementProgress = 1;
+
+    private GameObject expBar;
 
     public PointCountComponent(float victoryPoints) {
         this.victoryPoints = victoryPoints;
@@ -16,7 +23,7 @@ public class PointCountComponent extends ComponentSystem {
     protected void function() {
         //每秒增加10points
         this.points += 10 * deltaTime;
-
+        expBar.x = points / victoryPoints * 149 - 149;
         //检查得分成就
         CheckAchievement();
         //检查胜利
@@ -25,7 +32,9 @@ public class PointCountComponent extends ComponentSystem {
 
     @Override
     public void start() {
-
+        this.expBar = gameObject.scene.AddGameObject(new GameObject("expBar", -149, 245, 7));
+        this.expBar.AddComponent(new RenderComponent("exp.jpg"));
+        Scene.setCurrentGameObject(gameObject);
     }
 
     //调用增加分数
