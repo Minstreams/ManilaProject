@@ -41,7 +41,7 @@ public class Scene1 extends Scene {
         AddGameObject(new GameObject("MouseFollower",0,0,8));
         AddComponent(new FollowMouseComponent());
         AddComponent(new RenderComponent("00.png"));
-
+        AddComponent(new AudioClipComponent("bgm1.wav",true));
 
         //伤害检测组件
         Find("Boat").AddComponent(new BoatDamagedComponent(100, Find("Rocks"),Find("HPBar"),Find("HeadImage1")));

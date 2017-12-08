@@ -1,5 +1,6 @@
 package Scenes;
 
+import Components.AudioClipComponent;
 import Components.RenderComponent;
 import Components.MenuComponent;
 import Main.GameObject;
@@ -12,5 +13,6 @@ public class WinScene extends Scene {
         AddGameObject(new GameObject("WinScene",0,0,0));
         AddComponent(new RenderComponent("GAMEOVER.jpg"));
         AddComponent(new MenuComponent());
+        AddComponent(new AudioClipComponent("win.wav",true));
     }
 }
