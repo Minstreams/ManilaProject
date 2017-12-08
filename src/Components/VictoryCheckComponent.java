@@ -2,6 +2,7 @@ package Components;
 
 import Scenes.LoseScene;
 import Scenes.Scene1;
+import Scenes.WinScene;
 import Systems.ComponentSystem;
 
 public class VictoryCheckComponent extends ComponentSystem {
@@ -23,8 +24,8 @@ public class VictoryCheckComponent extends ComponentSystem {
     /**
      * 游戏胜利！
      */
-    public static void Win() {
-
+    public void Win(int stage) {
+        LoadScene(new WinScene());
     }
 
     /**
