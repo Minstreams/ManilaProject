@@ -18,6 +18,8 @@ public class Scene1 extends Scene {
         AddComponent(new VictoryCheckComponent());
         //控制类组件
         AddComponent(new BoatControllerComponent(4));
+        //计分组件
+        AddComponent(new PointCountComponent(1000,100));
 
         //产生石头,在该物体里面持续产生
         AddGameObject(new GameObject("Rocks", 0, 0, 2));

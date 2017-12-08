@@ -65,6 +65,7 @@ public class FireComponent extends ComponentSystem {
             //如果撞到
             if (deltaX <= 30 && deltaX >= -30 && deltaY <= 27 && deltaY >= -27) {
                 Destroy(r);
+                gameObject.GetComponent(PointCountComponent.class).AddPoint(50);
                 Destroy(shell);
                 return;
             }

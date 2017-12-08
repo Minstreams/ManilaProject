@@ -24,7 +24,8 @@ public class VictoryCheckComponent extends ComponentSystem {
     /**
      * 游戏胜利！
      */
-    public void Win(int stage) {
+    public void Win() {
+        VictoryCheckComponent.level += 1;
         LoadScene(new WinScene());
     }
 

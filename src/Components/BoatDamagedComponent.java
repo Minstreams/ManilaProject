@@ -1,5 +1,6 @@
 package Components;
 
+import Main.Achievements;
 import Main.GameObject;
 import Systems.ComponentSystem;
 
