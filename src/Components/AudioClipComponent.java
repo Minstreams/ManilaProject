@@ -45,4 +45,16 @@ public class AudioClipComponent extends ComponentSystem {
     public void Stop() {
         AudioPlayer.player.stop(audioStream);
     }
+
+    @Override
+    public void OnDestroy() {
+        super.OnDestroy();
+        Stop();
+        try {
+            audioStream.close();
+        }
+        catch (IOException ioe){
+            ioe.printStackTrace();
+        }
+    }
 }
