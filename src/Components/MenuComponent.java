@@ -4,7 +4,7 @@ import Main.Input;
 import Scenes.Scene1;
 import Systems.ComponentSystem;
 
-public class StartMenuComponent extends ComponentSystem {
+public class MenuComponent extends ComponentSystem {
     @Override
     protected void function() {
         if (Input.GetMouseDown(0)) {

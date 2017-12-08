@@ -1,7 +1,7 @@
 package Scenes;
 
 import Components.RenderComponent;
-import Components.StartMenuComponent;
+import Components.MenuComponent;
 import Main.GameObject;
 import Main.Scene;
 
@@ -11,6 +11,6 @@ public class WinScene extends Scene {
         //关卡1胜利
         AddGameObject(new GameObject("WinScene",0,0,0));
         AddComponent(new RenderComponent("GAMEOVER.jpg"));
-        AddComponent(new StartMenuComponent());
+        AddComponent(new MenuComponent());
     }
 }

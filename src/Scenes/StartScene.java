@@ -14,6 +14,6 @@ public class StartScene extends Scene {
         //菜单场景
         AddGameObject(new GameObject("StartScene",0,0,0));
         AddComponent(new RenderComponent("boat.jpg"));
-        AddComponent(new StartMenuComponent());
+        AddComponent(new MenuComponent());
     }
 }

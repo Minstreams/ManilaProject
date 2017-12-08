@@ -39,7 +39,7 @@ public class PointCountComponent extends ComponentSystem {
 
     private void Check() {
         if (points >= achievementPoints) {
-            AchivementComponent.ShowAchivement(Achievements.成就1);
+            AchievementComponent.ShowAchivement(Achievements.成就1);
             achievementPoints += achievementDeltaPoint;
         }
         if (points >= victoryPoints) {

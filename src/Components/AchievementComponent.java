@@ -4,7 +4,7 @@ import Main.Achievements;
 import Main.GameObject;
 import Systems.ComponentSystem;
 
-public class AchivementComponent extends ComponentSystem {
+public class AchievementComponent extends ComponentSystem {
 
     private static int startY = 160;
     private static int deltaY = 30;
@@ -15,7 +15,7 @@ public class AchivementComponent extends ComponentSystem {
     public static void ShowAchivement(Achievements achievement) {
         //TODO
         GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * boardNum));
-        g.AddComponent(new AchivementComponent());
+        g.AddComponent(new AchievementComponent());
         g.AddComponent(new RenderComponent("achievementBoard.jpg"));
         System.out.println("获得" + achievement.name() + "!");
     }
