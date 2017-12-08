@@ -4,7 +4,7 @@ import Main.Achievements;
 
 public class AchivementComponent {
 
-    public static void ShowAchivement(Achievements achievements){
+    public static void ShowAchivement(Achievements achievement){
         //TODO
     }
 }
