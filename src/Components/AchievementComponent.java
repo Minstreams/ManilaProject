@@ -3,7 +3,6 @@ package Components;
 import Main.Achievement;
 import Main.GameObject;
 import Systems.ComponentSystem;
-import sun.security.krb5.internal.crypto.Des;
 
 import java.util.ArrayList;
 
@@ -11,11 +10,17 @@ public class AchievementComponent extends ComponentSystem {
 
     private static int startY = 160;
     private static int deltaY = 30;
-    private static float moveRate = 0.08f;
+    private static float moveRate = 3;
 
-    protected static int achievementsShowedNum = 0;
+    protected static ArrayList<Integer> achievementsShowed = new ArrayList<Integer>();
 
     public static ArrayList<Achievement> achievementArrayList = new ArrayList<Achievement>();
+
+    private Integer id;
+
+    public AchievementComponent(Integer id) {
+        this.id = id;
+    }
 
     /**
      * 获得并显示成就
@@ -24,9 +29,13 @@ public class AchievementComponent extends ComponentSystem {
      * @param achievementInfo
      */
     public static void ShowAchivement(String achievementName, String achievementInfo) {
-        //TODO
-        GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * achievementsShowedNum));
-        g.AddComponent(new AchievementComponent());
+        Integer id = 0;
+        while(achievementsShowed.contains(id)){
+            id++;
+        }
+
+        GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * id));
+        g.AddComponent(new AchievementComponent(id));
         g.AddComponent(new RenderComponent("achievementBoard.jpg"));
         //g.AddComponent(new TextRendererComponent(achievementName));
         achievementArrayList.add(new Achievement(achievementName, achievementInfo));
@@ -54,16 +63,17 @@ public class AchievementComponent extends ComponentSystem {
 
     @Override
     protected void function() {
-        float delta = shown ? 959 : 800 - gameObject.x;
-        gameObject.x += delta * moveRate;
+        float delta = gameObject.x - (shown ? 959 : 800);
+        gameObject.x -= delta * moveRate * deltaTime;
         if (delta > -2 && delta < 2) {
-            if(shown){
+            if (shown) {
+                System.out.println("Ds!!!!");
                 Destroy(gameObject);
                 return;
             }
             timer += deltaTime;
         }
-        if(timer> 3){
+        if (timer > 3) {
             timer = 0;
             shown = true;
         }
@@ -71,13 +81,12 @@ public class AchievementComponent extends ComponentSystem {
 
     @Override
     public void start() {
-        achievementsShowedNum++;
+        achievementsShowed.add(id);
     }
 
     @Override
     public void OnDestroy() {
         super.OnDestroy();
-        achievementsShowedNum--;
-        System.out.println("asdasd");
+        achievementsShowed.remove(id);
     }
 }
