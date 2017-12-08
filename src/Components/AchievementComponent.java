@@ -30,11 +30,11 @@ public class AchievementComponent extends ComponentSystem {
      */
     public static void ShowAchivement(String achievementName, String achievementInfo) {
         Integer id = 0;
-        while(achievementsShowed.contains(id)){
+        while (achievementsShowed.contains(id)) {
             id++;
         }
 
-        GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * id));
+        GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * id, 3));
         g.AddComponent(new AchievementComponent(id));
         g.AddComponent(new RenderComponent("achievementBoard.jpg"));
         g.AddComponent(new TextRendererComponent(achievementName));
