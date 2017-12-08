@@ -9,11 +9,11 @@ public class AchievementComponent extends ComponentSystem {
     private static int deltaY = 30;
     private static float moveRate = 0.1f;
 
-    public static int achievementsGainedNum = 0;
+    protected static int achievementsShowedNum = 0;
 
-    public static void ShowAchivement(String achievementName) {
+    public static void ShowAchivement(String achievementName, String achievementInfo) {
         //TODO
-        GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * achievementsGainedNum));
+        GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * achievementsShowedNum));
         g.AddComponent(new AchievementComponent());
         g.AddComponent(new RenderComponent("achievementBoard.jpg"));
         g.AddComponent(new TextRendererComponent(achievementName));
@@ -27,12 +27,12 @@ public class AchievementComponent extends ComponentSystem {
 
     @Override
     public void start() {
-        achievementsGainedNum++;
+        achievementsShowedNum++;
     }
 
     @Override
     public void OnDestroy() {
         super.OnDestroy();
-        achievementsGainedNum--;
+        achievementsShowedNum--;
     }
 }
