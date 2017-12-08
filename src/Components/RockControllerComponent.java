@@ -4,19 +4,19 @@ import Systems.ComponentSystem;
 
 public class RockControllerComponent extends ComponentSystem {
 
-    private float speedX;
-    private float speedY;
+    private int speedX;
+    private int speedY;
 
-    public RockControllerComponent(float speedX, float speedY) {
+    public RockControllerComponent(int speedX, int speedY) {
         this.speedX = speedX;
         this.speedY = speedY;
     }
 
     @Override
     protected void function() {
-        gameObject.x-=speedX;
-        gameObject.y+=speedY;
-        if(gameObject.x<-50){
+        gameObject.x -= speedX * deltaTime;
+        gameObject.y += speedY * deltaTime;
+        if (gameObject.x < -50) {
             Destroy(gameObject);
         }
 

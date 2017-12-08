@@ -17,14 +17,14 @@ public class Scene1 extends Scene {
         AddComponent(new RenderComponent("boat.gif"));
         AddComponent(new VictoryCheckComponent());
         //控制类组件
-        AddComponent(new BoatControllerComponent(4));
+        AddComponent(new BoatControllerComponent(100));
         //计分组件
-        AddComponent(new PointCountComponent(1000,100));
+        AddComponent(new PointCountComponent(1000));
 
         //产生石头,在该物体里面持续产生
         AddGameObject(new GameObject("Rocks", 0, 0, 2));
         //在该组件里面给物体产生子物体 即炸弹
-        AddComponent(new RocksCreatAndDestoryComponent(0.4f,"rock.jpg",2,0));
+        AddComponent(new RocksCreatAndDestoryComponent(0.4f,"rock.jpg",50,0));
 
         //开火组件
         Find("Boat").AddComponent(new FireComponent(Find("Rocks")));
