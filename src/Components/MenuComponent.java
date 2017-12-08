@@ -1,7 +1,7 @@
 package Components;
 
 import Main.Input;
-import Scenes.Scene1;
+import Scenes.*;
 import Systems.ComponentSystem;
 
 public class MenuComponent extends ComponentSystem {
@@ -13,10 +13,10 @@ public class MenuComponent extends ComponentSystem {
                     LoadScene(new Scene1());
                     break;
                 case 2:
-                    LoadScene(new Scene1());
+                    LoadScene(new Scene2());
                     break;
                 case 3:
-                    LoadScene(new Scene1());
+                    LoadScene(new Scene3());
                     break;
                 default:
                     break;
