@@ -37,7 +37,7 @@ public class AchievementComponent extends ComponentSystem {
         GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * id));
         g.AddComponent(new AchievementComponent(id));
         g.AddComponent(new RenderComponent("achievementBoard.jpg"));
-        //g.AddComponent(new TextRendererComponent(achievementName));
+        g.AddComponent(new TextRendererComponent(achievementName));
         achievementArrayList.add(new Achievement(achievementName, achievementInfo));
     }
 
@@ -67,7 +67,6 @@ public class AchievementComponent extends ComponentSystem {
         gameObject.x -= delta * moveRate * deltaTime;
         if (delta > -2 && delta < 2) {
             if (shown) {
-                System.out.println("Ds!!!!");
                 Destroy(gameObject);
                 return;
             }

@@ -13,6 +13,8 @@ import javax.swing.*;
  */
 public abstract class RenderSystem extends MySystem {
     protected JPanel jPanel;
+    protected int layerOffset = 0;
+
     public static GameView gameView = new GameView();
 
     public JPanel getjPanel() {
@@ -47,7 +49,7 @@ public abstract class RenderSystem extends MySystem {
     @Override
     public void start() {
         createPanel();
-        gameView.PaintGameObject(this, gameObject.layer);
+        gameView.PaintGameObject(this, gameObject.layer + layerOffset);
     }
 
     /**

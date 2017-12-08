@@ -7,32 +7,29 @@ import java.awt.*;
 
 public class TextRendererComponent extends RenderSystem {
 
-    private String mString01 = null;
-
-    private JTextArea m_JTextField = new JTextArea(mString01);
+    private JTextField textField;
 
     /**
      * 需要显示的文本传进来，直接给游戏物体添加组件就ojbk
      *
-     * @param mString01
+     * @param mString
      */
-    public TextRendererComponent(String mString01) {
+    public TextRendererComponent(String mString) {
         super();
-        this.mString01 = mString01;
+        textField = new JTextField(mString);
+        layerOffset = 1;
     }
 
     @Override
     protected void createPanel() {
-        // 创建一个 JPanel, 使用 1 行 1 列的网格布局
-        JPanel panel = new JPanel(new GridLayout(4, 1));
+        // 创建一个 JPanel
+        JPanel panel = new JPanel();
 
-        /**
-         * 文本域属性设置
-         */
-        m_JTextField.setText(mString01);
-        m_JTextField.setEditable(false);
+        panel.setBounds((int)gameObject.x, (int)gameObject.y, 159, textField.getHeight());
+        panel.setOpaque(false);
 
-        panel.add(m_JTextField);
+        textField.setEditable(false);
+        panel.add(textField);
 
         jPanel = panel;
     }
@@ -40,7 +37,7 @@ public class TextRendererComponent extends RenderSystem {
     @Override
     protected void function() {
         if (jPanel != null) {
-            jPanel.setBounds((int)gameObject.x, (int)gameObject.y, 100, 100);
+            jPanel.setBounds((int)gameObject.x, (int)gameObject.y, 159, textField.getHeight());
         }
     }
 }
