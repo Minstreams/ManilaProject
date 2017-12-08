@@ -1,6 +1,7 @@
 package Main;
 
-import Components.RenderComponent;
+import Components.*;
+import Systems.RenderSystem;
 
 import java.awt.*;
 
@@ -40,7 +41,7 @@ public class GameView {
      * @param rc
      * @param layer
      */
-    public void PaintGameObject(RenderComponent rc, int layer) {
+    public void PaintGameObject(RenderSystem rc, int layer) {
         jLayeredPane.add(rc.getjPanel(), new Integer(layer));
     }
 
@@ -48,7 +49,7 @@ public class GameView {
      * 删除相应物体
      * @param rc
      */
-    public void Destroy(RenderComponent rc) {
+    public void Destroy(RenderSystem rc) {
         jLayeredPane.remove(rc.getjPanel());
         //刷新
         jFrame.setContentPane(jLayeredPane);

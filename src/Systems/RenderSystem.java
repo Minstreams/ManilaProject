@@ -4,15 +4,20 @@ import java.util.ArrayList;
 
 import Main.GameView;
 
+import javax.swing.*;
+
 /**
  * 渲染系统，所有渲染组件的父类
  *
  * @author 47465
  */
 public abstract class RenderSystem extends MySystem {
-
+    protected JPanel jPanel;
     public static GameView gameView = new GameView();
 
+    public JPanel getjPanel() {
+        return jPanel;
+    }
 
 //-----------------------------------分割线------------------------------------
 //以下的代码没什么好改的。
@@ -37,5 +42,28 @@ public abstract class RenderSystem extends MySystem {
     public RenderSystem() {
         components.add(this);
         System.out.println("RenderComponent Added!");
+    }
+
+    @Override
+    public void start() {
+        createPanel();
+        gameView.PaintGameObject(this, gameObject.layer);
+    }
+
+    /**
+     * 自定义jPanel
+     * @return
+     */
+    protected abstract void createPanel();
+
+    /**
+     * 析构时将自己从组件表列移除
+     */
+    @Override
+    public void OnDestroy() {
+        gameView.Destroy(this);
+        jPanel = null;
+        components.remove(this);
+        System.out.println("RenderComponent Removed!");
     }
 }
