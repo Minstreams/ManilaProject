@@ -8,7 +8,7 @@ import Systems.ComponentSystem;
 public class MenuComponent extends ComponentSystem {
     @Override
     protected void function() {
-        if (Input.GetMouseDown(0) || Input.GetKeyDown(KeyCode.Z)) {
+        if (Input.GetMouseDown(0) || Input.GetKeyDown(KeyCode.X)) {
             switch (VictoryCheckComponent.level) {
                 case 1:
                     LoadScene(new Scene1());

@@ -80,4 +80,8 @@ public abstract class Scene {
         gameObjects.clear();
         System.out.println("Scene Destroyed!");
     }
+
+    public static void setCurrentGameObject(GameObject currentGameObject) {
+        Scene.currentGameObject = currentGameObject;
+    }
 }

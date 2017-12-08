@@ -30,8 +30,8 @@ public class GameView {
      * 创建窗口
      */
     public void CreatView() {
-        //width = 800 + 159 + 8, height = 600 + 36
-        jFrame.setSize(967, 636);
+        //width = 800 + 159 + 8, height = 600 + 46
+        jFrame.setSize(967, 646);
         jFrame.setContentPane(jLayeredPane);
         jFrame.setVisible(true);
 

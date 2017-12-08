@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class AchievementComponent extends ComponentSystem {
 
-    private static int startY = 160;
-    private static int deltaY = 30;
+    private static int startY = 270;
+    private static int deltaY = 80;
     private static float moveRate = 3;
 
     protected static ArrayList<Integer> achievementsShowed = new ArrayList<Integer>();
@@ -34,11 +34,13 @@ public class AchievementComponent extends ComponentSystem {
             id++;
         }
 
-        GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * id, 3));
+        GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", -175, startY + deltaY * id, 7));
         g.AddComponent(new AchievementComponent(id));
-        g.AddComponent(new RenderComponent("achievementBoard.jpg"));
+        g.AddComponent(new RenderComponent("message.png"));
         g.AddComponent(new TextRendererComponent(achievementName));
-        achievementArrayList.add(new Achievement(achievementName, achievementInfo));
+        if(!IsAchievementGained(achievementName)) {
+            achievementArrayList.add(new Achievement(achievementName, achievementInfo));
+        }
     }
 
     /**
@@ -47,7 +49,7 @@ public class AchievementComponent extends ComponentSystem {
      * @param name
      * @return
      */
-    public boolean isAchievementGained(String name) {
+    public static boolean IsAchievementGained(String name) {
         for (Achievement achievement : achievementArrayList) {
             if (achievement.name.equals(name)) {
                 return true;
@@ -63,7 +65,7 @@ public class AchievementComponent extends ComponentSystem {
 
     @Override
     protected void function() {
-        float delta = gameObject.x - (shown ? 959 : 800);
+        float delta = gameObject.x - (shown ? -175 : -10);
         gameObject.x -= delta * moveRate * deltaTime;
         if (delta > -2 && delta < 2) {
             if (shown) {

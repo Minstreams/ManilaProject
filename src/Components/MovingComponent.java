@@ -2,12 +2,12 @@ package Components;
 
 import Systems.ComponentSystem;
 
-public class RockControllerComponent extends ComponentSystem {
+public class MovingComponent extends ComponentSystem {
 
     private int speedX;
     private int speedY;
 
-    public RockControllerComponent(int speedX, int speedY) {
+    public MovingComponent(int speedX, int speedY) {
         this.speedX = speedX;
         this.speedY = speedY;
     }
@@ -16,7 +16,7 @@ public class RockControllerComponent extends ComponentSystem {
     protected void function() {
         gameObject.x -= speedX * deltaTime;
         gameObject.y += speedY * deltaTime;
-        if (gameObject.x < -50) {
+        if (gameObject.x < 100) {
             Destroy(gameObject);
         }
 
