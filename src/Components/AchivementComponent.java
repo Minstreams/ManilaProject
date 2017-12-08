@@ -8,16 +8,16 @@ public class AchivementComponent extends ComponentSystem {
 
     private static int startY = 160;
     private static int deltaY = 30;
-    private static float moveRate;
+    private static float moveRate = 0.1f;
 
     protected static int boardNum = 0;
 
     public static void ShowAchivement(Achievements achievement) {
         //TODO
-        System.out.println("获得" + achievement.name() + "!");
         GameObject g = gameWorld.getCurrentScene().AddGameObject(new GameObject("Achievement Board", 959, startY + deltaY * boardNum));
         g.AddComponent(new AchivementComponent());
         g.AddComponent(new RenderComponent("achievementBoard.jpg"));
+        System.out.println("获得" + achievement.name() + "!");
     }
 
     @Override
