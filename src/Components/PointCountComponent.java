@@ -1,6 +1,5 @@
 package Components;
 
-import Main.Achievements;
 import Systems.ComponentSystem;
 
 public class PointCountComponent extends ComponentSystem {
