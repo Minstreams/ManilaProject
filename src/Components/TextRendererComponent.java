@@ -40,7 +40,7 @@ public class TextRendererComponent extends RenderSystem {
     @Override
     protected void function() {
         if (jPanel != null) {
-            jPanel.setBounds(gameObject.x, gameObject.y, 100, 100);
+            jPanel.setBounds((int)gameObject.x, (int)gameObject.y, 100, 100);
         }
     }
 }

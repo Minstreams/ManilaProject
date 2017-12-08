@@ -14,8 +14,8 @@ import Systems.RenderSystem;
  */
 public class GameObject {
     public String name;//名称
-    public int x;//横坐标
-    public int y;//纵坐标
+    public float x;//横坐标
+    public float y;//纵坐标
     public int layer;//图层
 
     public Scene scene;//关联的场景
@@ -25,14 +25,14 @@ public class GameObject {
 
     private ArrayList<MySystem> components = new ArrayList<MySystem>();//组件表列
 
-    public GameObject(String name, int x, int y, int layer) {
+    public GameObject(String name, float x, float y, int layer) {
         this.name = name;
         this.x = x;
         this.y = y;
         this.layer = layer;
     }
 
-    public GameObject(String name, int x, int y) {
+    public GameObject(String name, float x, float y) {
         this.name = name;
         this.x = x;
         this.y = y;

@@ -54,11 +54,11 @@ public class AchievementComponent extends ComponentSystem {
 
     @Override
     protected void function() {
-        int delta = shown ? 959 : 800 - gameObject.x;
+        float delta = shown ? 959 : 800 - gameObject.x;
         gameObject.x += delta * moveRate;
         if (delta > -2 && delta < 2) {
             if(shown){
-            //    Destroy(gameObject);
+                Destroy(gameObject);
                 return;
             }
             timer += deltaTime;
@@ -78,5 +78,6 @@ public class AchievementComponent extends ComponentSystem {
     public void OnDestroy() {
         super.OnDestroy();
         achievementsShowedNum--;
+        System.out.println("asdasd");
     }
 }

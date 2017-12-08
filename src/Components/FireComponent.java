@@ -60,8 +60,8 @@ public class FireComponent extends ComponentSystem {
                 continue;
             }
 
-            int deltaX = r.x - shell.x + 20;
-            int deltaY = r.y - shell.y + 23;
+            float deltaX = r.x - shell.x + 20;
+            float deltaY = r.y - shell.y + 23;
             //如果撞到
             if (deltaX <= 30 && deltaX >= -30 && deltaY <= 27 && deltaY >= -27) {
                 Destroy(r);

@@ -30,7 +30,7 @@ public class RenderComponent extends RenderSystem {
     @Override
     protected void function() {
         if (jPanel != null) {
-            jPanel.setBounds(gameObject.x, gameObject.y, imageIcon.getIconWidth(), imageIcon.getIconHeight());
+            jPanel.setBounds((int)gameObject.x, (int)gameObject.y, imageIcon.getIconWidth(), imageIcon.getIconHeight());
         }
     }
 
@@ -40,7 +40,7 @@ public class RenderComponent extends RenderSystem {
         JPanel panel = new JPanel(new GridLayout(1, 1));
 
         // 设置容器的位置和宽高
-        panel.setBounds(gameObject.x, gameObject.y, imageIcon.getIconWidth(), imageIcon.getIconHeight());
+        panel.setBounds((int)gameObject.x, (int)gameObject.y, imageIcon.getIconWidth(), imageIcon.getIconHeight());
 
         // 设置 panel 的背景
         panel.setOpaque(false);
