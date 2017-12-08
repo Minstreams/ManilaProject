@@ -57,10 +57,11 @@ public class GameObject {
      *
      * @param component
      */
-    public void AddComponent(MySystem component) {
+    public MySystem AddComponent(MySystem component) {
         components.add(component);
         component.gameObject = this;
         component.start();
+        return component;
     }
 
     /**

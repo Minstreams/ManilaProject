@@ -14,13 +14,16 @@ public class FireComponent extends ComponentSystem {
     private float timer = 0;
     private float shellSpeed = 8;
 
+    private AudioClipComponent audio1;
+
     public FireComponent(GameObject rocks) {
         this.rocks = rocks;
     }
 
     @Override
     public void start() {
-
+        audio1 = new AudioClipComponent("Launch.wav", false);
+        gameObject.AddComponent(audio1);
     }
 
     @Override
@@ -33,6 +36,7 @@ public class FireComponent extends ComponentSystem {
         if (Input.GetKey(KeyCode.Z) && timer > fireColdTime) {
             GameObject g = gameObject.AddChild(new GameObject("shell", gameObject.x + 150, gameObject.y + 92, 2));
             g.AddComponent(new RenderComponent("shell.png"));
+            audio1.Play();
             timer = 0;
         }
 
