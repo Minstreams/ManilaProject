@@ -20,7 +20,7 @@ public class AchievementsShowBoard extends ComponentSystem {
     private int pid;//成就序号
     private String name;
     private String info;
-    private static int maxAchievementNum = 6;//一面显示的最多成就数
+    private static int maxAchievementNum = 7;//一面显示的最多成就数
 
     public AchievementsShowBoard(boolean isInfo, Integer id, int pid) {
         this.isInfo = isInfo;
