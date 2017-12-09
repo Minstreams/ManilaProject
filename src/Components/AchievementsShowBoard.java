@@ -43,10 +43,14 @@ public class AchievementsShowBoard extends ComponentSystem {
         g.AddComponent(new AchievementsShowBoard(isInfo, id, pid));
     }
 
-    public static void ShowAll(){
-        for(int i = 0;i<maxAchievementNum;i++){
-            ShowInfo(i,false);
-            ShowInfo(i,true);
+    public static void ShowAll() {
+        int max = maxAchievementNum;
+        if (max > AchievementComponent.achievementArrayList.size()) {
+            max = AchievementComponent.achievementArrayList.size();
+        }
+        for (int i = 0; i < max; i++) {
+            ShowInfo(i, false);
+            ShowInfo(i, true);
         }
         Input.GetMouseUp(0);
         Input.GetMouseDown(0);
@@ -63,12 +67,11 @@ public class AchievementsShowBoard extends ComponentSystem {
                 Destroy(gameObject);
                 return;
             }
-            if(!isInfo){
-                if(Input.GetMouseDown(0)){
+            if (!isInfo) {
+                if (Input.GetMouseDown(0)) {
                     shown = true;
                 }
-            }
-            else if(Input.GetMouseUp(0)){
+            } else if (Input.GetMouseUp(0)) {
                 shown = true;
             }
         }
@@ -77,7 +80,7 @@ public class AchievementsShowBoard extends ComponentSystem {
     @Override
     public void start() {
         gameObject.x = isInfo ? 960 : -175;
-        gameObject.y = startY + deltaY * (id/2);
+        gameObject.y = startY + deltaY * (id / 2);
         achievementsShowed.add(id);
         gameObject.AddComponent(new RenderComponent(name));
         gameObject.AddComponent(new TextRendererComponent(info, isInfo ? 750 : 175));
