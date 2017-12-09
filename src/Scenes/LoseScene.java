@@ -18,6 +18,6 @@ public class LoseScene extends Scene{
         AddGameObject(new GameObject("MouseFollower", 0, 0, 8));
         AddComponent(new FollowMouseComponent());
         AddComponent(new RenderComponent("cursor.png"));
-        AddComponent(new AudioClipComponent("bgm1.wav", true));
+        AddComponent(new AudioClipComponent("lose.wav", true));
     }
 }

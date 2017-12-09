@@ -25,7 +25,7 @@ public class Scene3 extends Scene {
         AddComponent(new RocksCreatAndDestoryComponent(0.3f, "stone11.png", "stone12.png", "stone13.png", 100, 15));
 
         AddGameObject(new GameObject("Items", 0, 0, 1));
-        AddComponent(new RocksCreatAndDestoryComponent(25f, "item1.png", "item2.png", "item3.png", 150, 50));
+        AddComponent(new RocksCreatAndDestoryComponent(25f, "item.gif", "item.gif", "item.gif",150, 50));
 
         //开火组件
         Find("Boat").AddComponent(new FireComponent(Find("Rocks"), Find("Items")));

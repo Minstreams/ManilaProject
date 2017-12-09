@@ -1,9 +1,6 @@
 package Scenes;
 
-import Components.AudioClipComponent;
-import Components.FollowMouseComponent;
-import Components.RenderComponent;
-import Components.MenuComponent;
+import Components.*;
 import Main.GameObject;
 import Main.Scene;
 
