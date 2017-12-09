@@ -88,7 +88,7 @@ public class BoatDamagedComponent extends ComponentSystem {
             float deltaX = r.x - gameObject.x - 63;
             float deltaY = r.y - gameObject.y - 67;
             //如果撞到
-            if (deltaX <= 87 && deltaX >= -87 && deltaY <= 65 && deltaY >= -65) {
+            if (deltaX <= 60 && deltaX >= -87 && deltaY <= 65 && deltaY >= -15) {
                 if (!isInvisible) {
                     DecreaseHP(20);
                     BecomeInvisible();
