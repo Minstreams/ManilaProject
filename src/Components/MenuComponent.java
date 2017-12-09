@@ -19,9 +19,16 @@ public class MenuComponent extends ComponentSystem {
                 case 3:
                     LoadScene(new Scene3());
                     break;
+                case 4:
+                    AchievementsShowBoard.ShowAll();
+                    Destroy(this);
+                    break;
                 default:
                     break;
             }
+        }
+        if (Input.GetKeyDown(KeyCode.P)) {
+            AchievementsShowBoard.ShowAll();
         }
     }
 
