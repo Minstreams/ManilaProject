@@ -74,8 +74,8 @@ public abstract class Scene {
     }
 
     public void OnDestroy() {
-        for (GameObject gameObject : gameObjects) {
-            gameObject.OnDestroy();
+        for(int i = 0 ;i<gameObjects.size();i++){
+            gameObjects.get(i).OnDestroy();
         }
         gameObjects.clear();
         System.out.println("Scene Destroyed!");
