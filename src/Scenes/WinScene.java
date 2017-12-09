@@ -11,10 +11,14 @@ public class WinScene extends Scene {
     @Override
     protected void LoadScene() {
         //关卡1胜利
-        AddGameObject(new GameObject("WinScene",0,0,0));
+        AddGameObject(new GameObject("WinScene",0,0,1));
         AddComponent(new RenderComponent("WIN.png"));
         AddComponent(new MenuComponent());
 
+        AddGameObject(new GameObject("back",0,0,0));
+        AddComponent(new RenderComponent("back.gif"));
+        AddComponent(new MenuComponent());
+        
         AddGameObject(new GameObject("MouseFollower", 0, 0, 8));
         AddComponent(new FollowMouseComponent());
         AddComponent(new RenderComponent("cursor.png"));
