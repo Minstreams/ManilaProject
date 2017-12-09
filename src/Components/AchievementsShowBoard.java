@@ -8,8 +8,8 @@ import Systems.ComponentSystem;
 import java.util.ArrayList;
 
 public class AchievementsShowBoard extends ComponentSystem {
-    private static int startY = 10;
-    private static int deltaY = 80;
+    private static int startY = 0;
+    private static int deltaY = 81;
     private static float moveRate = 5;
 
     private boolean isInfo;//是否显示信息
