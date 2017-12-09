@@ -14,8 +14,6 @@ public class LoseScene extends Scene{
         
         AddGameObject(new GameObject("back",0,0,0));
         AddComponent(new RenderComponent("back.gif"));
-        AddComponent(new MenuComponent());
-        
 
         AddGameObject(new GameObject("MouseFollower", 0, 0, 8));
         AddComponent(new FollowMouseComponent());
