@@ -93,7 +93,7 @@ public class BoatDamagedComponent extends ComponentSystem {
                     DecreaseHP(20);
                     BecomeInvisible();
                 } else {
-                    AchievementComponent.ShowAchivement("连环碰撞！", "连续撞两个石头");
+                    AchievementComponent.ShowAchivement("第二次对圣斗士无效", "受伤CD中撞到岩石。");
                 }
                 Destroy(r);
                 return;

@@ -82,20 +82,17 @@ public class FireComponent extends ComponentSystem {
             if (deltaX <= 30 && deltaX >= -30 && deltaY <= 27 && deltaY >= -27) {
                 killNum++;
                 switch (killNum) {
-                    case 30:
-                        AchievementComponent.ShowAchivement("超越神了！！！", "三十连杀");
+                    case 50:
+                        AchievementComponent.ShowAchivement("就像垃圾一样", "未受伤的情况下连续摧毁50块岩石。");
                         break;
                     case 20:
-                        AchievementComponent.ShowAchivement("势不可挡！", "二十连杀");
-                        break;
-                    case 15:
-                        AchievementComponent.ShowAchivement("弹无虚发！", "十五连杀");
+                        AchievementComponent.ShowAchivement("S级战舰", "未受伤的情况下连续摧毁20块岩石。");
                         break;
                     case 10:
-                        AchievementComponent.ShowAchivement("十连杀！", "");
+                        AchievementComponent.ShowAchivement("超越神了", "未受伤的情况下连续摧毁10块岩石。");
                         break;
                     case 5:
-                        AchievementComponent.ShowAchivement("五连杀", "");
+                        AchievementComponent.ShowAchivement("暴走ll", "未受伤的情况下连续摧毁5块岩石。");
                         break;
                 }
                 Destroy(r);

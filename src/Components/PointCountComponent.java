@@ -51,13 +51,13 @@ public class PointCountComponent extends ComponentSystem {
                 case 1:
                     switch (achievementProgress) {
                         case 1:
-                            AchievementComponent.ShowAchivement("小试牛刀25%", "在第一关达到250分。");
+                            AchievementComponent.ShowAchivement("小试牛刀25%", "第一关积分进度达到25%。");
                             break;
                         case 2:
-                            AchievementComponent.ShowAchivement("小试牛刀50%", "在第一关达到500分。");
+                            AchievementComponent.ShowAchivement("小试牛刀50%", "第一关积分进度达到50%。");
                             break;
                         case 3:
-                            AchievementComponent.ShowAchivement("小试牛刀75%", "在第一关达到750分。");
+                            AchievementComponent.ShowAchivement("小试牛刀75%", "第一关积分进度达到75%。");
                             break;
                         default:
                             break;
@@ -67,13 +67,13 @@ public class PointCountComponent extends ComponentSystem {
                 case 2:
                     switch (achievementProgress) {
                         case 1:
-                            AchievementComponent.ShowAchivement("大展身手25%", "在第二关达到250分。");
+                            AchievementComponent.ShowAchivement("大展身手25%", "第二关积分进度达到25%。");
                             break;
                         case 2:
-                            AchievementComponent.ShowAchivement("大展身手50%", "在第二关达到500分。");
+                            AchievementComponent.ShowAchivement("大展身手50%", "第二关积分进度达到50%。");
                             break;
                         case 3:
-                            AchievementComponent.ShowAchivement("大展身手75%", "在第二关达到750分。");
+                            AchievementComponent.ShowAchivement("大展身手75%", "第二关积分进度达到75%。");
                             break;
                         default:
                             break;
@@ -83,13 +83,13 @@ public class PointCountComponent extends ComponentSystem {
                 case 3:
                     switch (achievementProgress) {
                         case 1:
-                            AchievementComponent.ShowAchivement("天下无双25%", "在第三关达到250分。");
+                            AchievementComponent.ShowAchivement("天下无双25%", "第三关积分进度达到25%。");
                             break;
                         case 2:
-                            AchievementComponent.ShowAchivement("天下无双50%", "在第三关达到500分。");
+                            AchievementComponent.ShowAchivement("天下无双50%", "第三关积分进度达到50%。");
                             break;
                         case 3:
-                            AchievementComponent.ShowAchivement("天下无双75%", "在第三关达到750分。");
+                            AchievementComponent.ShowAchivement("天下无双75%", "第三关积分进度达到75%。");
                             break;
                         default:
                             break;

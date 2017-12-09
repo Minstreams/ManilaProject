@@ -53,7 +53,7 @@ public class BoatControllerComponent extends ComponentSystem {
         if (highSpeed) {
             timer += deltaTime;
             if (timer > 4) {
-                AchievementComponent.ShowAchivement("乘风破浪！", "连续高速运行4秒以上");
+                AchievementComponent.ShowAchivement("乘风破浪", "全速移动4秒以上。");
                 timer = 0;
             }
             if (v < 0.5f) {

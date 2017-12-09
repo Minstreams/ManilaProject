@@ -17,7 +17,7 @@ public class ShotBuffComponent extends ComponentSystem {
         if (timer > maxTime) {
             killNum = FireComponent.getKillNum() - killNum;
             if (killNum >= 5) {
-                AchievementComponent.ShowAchivement("势如破竹  ！", "Buff里杀了5个以上的石头");
+                AchievementComponent.ShowAchivement("欧拉欧拉欧拉！", "强化状态下摧毁五块岩石。");
             }
 
 
@@ -28,7 +28,7 @@ public class ShotBuffComponent extends ComponentSystem {
     @Override
     public void start() {
         FireComponent.setFireColdTime(0.3f);
-        AchievementComponent.ShowAchivement("我充满了力量！", "捡到道具。");
+        AchievementComponent.ShowAchivement("强化道具？能不用吗？", "获得强化状态。");
         killNum = FireComponent.getKillNum();
     }
 
