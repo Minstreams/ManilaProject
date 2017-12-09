@@ -8,9 +8,9 @@ import Systems.ComponentSystem;
 import java.util.ArrayList;
 
 public class AchievementsShowBoard extends ComponentSystem {
-    private static int startY = 30;
+    private static int startY = 10;
     private static int deltaY = 80;
-    private static float moveRate = 3;
+    private static float moveRate = 5;
 
     private boolean isInfo;//是否显示信息
 
@@ -27,7 +27,7 @@ public class AchievementsShowBoard extends ComponentSystem {
         this.id = id;
         this.pid = pid;
         Achievement a = AchievementComponent.achievementArrayList.get(pid);
-        name = isInfo ? "info.jpg" : "message.png";
+        name = isInfo ? "info.png" : "message.png";
         info = isInfo ? a.info : a.name;
     }
 
