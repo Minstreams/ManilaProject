@@ -29,6 +29,7 @@ public class MenuComponent extends ComponentSystem {
         }
         if (Input.GetKeyDown(KeyCode.P)) {
             AchievementsShowBoard.ShowAll();
+            Destroy(this);
         }
     }
 
