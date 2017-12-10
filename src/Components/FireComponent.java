@@ -92,7 +92,7 @@ public class FireComponent extends ComponentSystem {
                         AchievementComponent.ShowAchivement("超越神了", "未受伤的情况下连续摧毁10块岩石。");
                         break;
                     case 5:
-                        AchievementComponent.ShowAchivement("暴走ll", "未受伤的情况下连续摧毁5块岩石。");
+                        AchievementComponent.ShowAchivement("暴走", "未受伤的情况下连续摧毁5块岩石。");
                         break;
                 }
                 Destroy(r);
